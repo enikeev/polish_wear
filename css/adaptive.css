@@ -17,6 +17,16 @@
 		display: block;
 		margin: 0 7px 12px;
 	}
+
+
+	.catalog-list .prodcard-item:nth-of-type(3n-1) {
+		margin: 10px 15px;
+	}
+	.catalog-list .prodcard-item {
+		width: 30%;
+	}
+
+
 }
 
 
@@ -61,6 +71,22 @@
 	}
 	.subnav-menu{font-size: 14px;}
 	.subnav-cat{font-size: 12px;}
+	.carousel_category .carousel-txt{font-size: 14px}
+
+	.section_wear .wear-img{width: 100%}
+
+	.section_wear .wear-descr {margin-left: 0;}
+
+
+
+
+	.catalog-list .prodcard-item:nth-of-type(3n-1),
+	.catalog-list .prodcard-item {
+		width: 97%;
+		margin: 5px;
+	}
+
+
 }
 
 
