@@ -24,7 +24,7 @@
 $(function(){
 	$('.carousel_category').owlCarousel({
 		loop:true,
-		margin:4,
+		margin:5,
 		nav:true,
 		dots:false,
 		responsive:{
@@ -89,7 +89,7 @@ $(function(){
 		var $this = $(this);
 		var targ = $this.data('show-in');
 
-		console.log(targ);
+	//	console.log(targ);
 
 		if ( $this.hasClass('active') ){
 			$this.add('[data-show-out]').removeClass('active')
@@ -140,7 +140,7 @@ $(function(){
 			$box.css('left', '0');
 		}
 
-		console.log(lp + ' ' + wp + ' ' + wb)
+	//	console.log(lp + ' ' + wp + ' ' + wb)
 
 	});
 
