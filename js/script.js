@@ -1,10 +1,209 @@
+
+function declOfNumFormat(nStr){
+	nStr += '';
+	x = nStr.split('.');
+	x1 = x[0];
+	x2 = x.length > 1 ? '.' + x[1] : '';
+	var rgx = /(\d+)(\d{3})/;
+	while (rgx.test(x1)) {
+		x1 = x1.replace(rgx, '$1' + ' ' + '$2');
+	}
+	return x1 + x2;
+}
+
+function declOfNum(number, titles){
+	cases = [2, 0, 1, 1, 1, 2];
+	return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];
+}
+
+
+
+
+
 (function(){
 	var app = {
-		func: function(){
+		order: {
+			check: function(){
+				var priceAllRUB = 0;
+				var priceAllUSD = 0;
+				var allGoods = 0;
+
+				$('.order-group').each(function(){
+
+					var $group = $(this);
+
+					var priceGroupRUB = 0;
+					var priceGroupUSD = 0;
+
+					$(this).find('.order-item').each(function(){
+						var $this = $(this);
+						var max = $this.data('max');
+						var sumItem = +$this.find('.increase-num').text();
+						var priceItemRUB = +$this.find('.price-uno .price-rub span').text().replace(' ', '');
+						var priceItemUSD = +$this.find('.price-uno .price-usd span').text().replace(',', '.');
+						var rub = sumItem * priceItemRUB;
+						var usd = sumItem * priceItemUSD;
+
+						$this.find('.price-sum .price-rub span').text( declOfNumFormat(rub) );
+						$this.find('.price-sum .price-usd span').text( usd.toFixed(2).toString().replace('.', ',') );
+
+						if ( sumItem > max ) { $this.addClass('order-item_few'); }
+						else {
+							$this.removeClass('order-item_few');
+							$this.closest('.order-group').removeClass('order-group_wrong');
+						}
+
+						allGoods += sumItem;
+
+						priceGroupRUB += rub;
+						priceGroupUSD += usd;
+
+					});
+
+					var checkbox = $group.find('.order-item-checkbox');
+					var checkboxChecked = $group.find('.order-item-checkbox').filter(':checked');
+
+					if ( checkbox.length == checkboxChecked.length ) {
+						$group.find('.order-group-checkbox').prop('checked', true);
+					} else {
+						$group.find('.order-group-checkbox').prop('checked', false);
+					}
+
+					$group.find('.order-choosen i').text( checkboxChecked.length );
+					$group.find('.order-totalval .rub i').text( declOfNumFormat(priceGroupRUB) );
+					$group.find('.order-totalval .usd i').text( priceGroupUSD.toFixed(2).toString().replace('.', ',') );
+
+
+					if ( !$group.find('.order-item').size() ) { $group.remove(); }
+
+					priceAllRUB += priceGroupRUB;
+					priceAllUSD += priceGroupUSD;
+				});
+
+				$('.order-result__check .info__goods').text( allGoods + ' ' + declOfNum(allGoods,  ['товар', 'товара', 'товаров'] ) );
+				$('.order-result__check .info__val .rub').text( declOfNumFormat(priceAllRUB) );
+				$('.order-result__check .calc__item_all .rub i').text( declOfNumFormat(priceAllRUB) );
+				$('.order-result__check .calc__item_all .usd i').text( priceAllUSD.toFixed(2).toString().replace('.', ',') );
+				$('.order-result__check .calc__item_advance .rub i').text( declOfNumFormat(0.3*priceAllRUB) );
+				$('.order-result__check .calc__item_advance .usd i').text( (0.3*priceAllUSD).toFixed(2).toString().replace('.', ',') );
+
+				if ( $('.order-item_few').length ){
+					$('.order-item_few').closest('.order-group').addClass('order-group_wrong')
+				}
+
+				return allGoods;
+			}
 
 		},
+
+		brands: {
+
+			check: function(){
+
+				var brandsBox = $('.brands-box'),
+					$group = $('.brands-words__item'),
+					$class = $('.brands-btns__item'),
+					activeGroup = $group.filter('.active'),
+					activeClass = $class.filter('.active'),
+					activeGroupMarker = activeGroup.data('group'),
+					activeClassMarker = activeClass.data('class');
+
+				$('.brands-group__item').removeClass('active');
+
+				activeClass.each(function(){
+					$('.brands-group__item').filter(function(){
+						var arr = $(this).data('class').split(', ');
+						return $.inArray( activeClassMarker, arr ) >= 0;
+					}).addClass('active');
+				});
+
+				if ( activeGroup.size() ){ brandsBox.addClass('group-filter');
+				} else { brandsBox.removeClass('group-filter'); }
+
+				if ( activeClass.size() ){ brandsBox.addClass('class-filter');
+				} else { brandsBox.removeClass('class-filter'); }
+
+
+				$('.brands-group').removeClass('hide active').each(function(){
+					if ( $(this).find('.brands-group__item').filter(':visible').size() <= 0 ) $(this).addClass('hide');
+				}).filter(function(){return $(this).data('group') == activeGroupMarker; }).addClass('active');
+			},
+
+			init: function(){
+
+				$('.brands-words__item').click(function(e){
+					e.preventDefault();
+
+					$('.brands-btns__item').filter('.active').removeClass('active');
+
+					$t = $(this);
+					if ( $t.hasClass('disable') ){
+						return false;
+					} else if( $t.hasClass('active') ){
+						$t.removeClass('active');
+					} else {
+						$('.brands-words__item').filter('.active').removeClass('active');
+						$t.addClass('active');
+					}
+					app.brands.check();
+				});
+
+				$('.brands-btns__item').click(function(e){
+					e.preventDefault();
+
+					$('.brands-words__item').filter('.active').removeClass('active');
+
+					$t = $(this);
+
+					if ( $t.hasClass('active') ){
+						$t.removeClass('active');
+					} else {
+						$('.brands-btns__item').filter('.active').removeClass('active');
+						$t.addClass('active');
+					}
+
+					app.brands.check();
+				});
+
+			}
+		},
+
 		init: function(){
-			app.func()
+
+			app.order.check();
+			app.brands.init();
+
+			$('.order-item-checkbox').change(app.order.check);
+			$('.order-group-checkbox').change(function(){
+				var $t = $(this);
+				if ( $t.is(':checked') ){
+					$t.closest('.order-group').find('.order-item-checkbox').prop('checked', true);
+				} else {
+					$t.closest('.order-group').find('.order-item-checkbox').prop('checked', false);
+				}
+				app.order.check();
+			});
+
+			$('.order-choosendel').click(function(){
+				var $t = $(this);
+				$t.closest('.order-group').find('.order-item-checkbox').filter(':checked').closest('.order-item').remove();
+				app.order.check();
+			});
+
+			$('.increase-btn').click(function(){
+				var $p = $(this).closest('.increase-box');
+				var val = $p.find('.increase-num');
+
+				if ( $(this).hasClass('increase-btn_up') ){ val.text(+val.text()+1); }
+				else if ( val.text() > 0 ) { val.text(+val.text()-1); }
+
+				app.order.check();
+			});
+
+			$('.order-item .status-del').click(function(){
+				$(this).closest('.order-item').remove();
+				app.order.check();
+			});
 		}
 	};
 
@@ -19,6 +218,7 @@
 	}, 50);
 
 })();
+
 
 
 $(function(){
@@ -317,6 +517,11 @@ $(function(){
 		$wrap.find('.i-from').val($slider.data('range-min'));
 		$wrap.find('.i-to').val($slider.data('range-max'));
 	});
+
+
+//cart
+
+
 
 
 });

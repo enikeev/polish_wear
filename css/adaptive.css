@@ -86,6 +86,9 @@
 		margin: 5px;
 	}
 
+	.order-table .name-table {
+		margin-left: 0;
+	}
 
 }
 
