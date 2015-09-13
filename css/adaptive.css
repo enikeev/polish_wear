@@ -90,6 +90,20 @@
 		margin-left: 0;
 	}
 
+
+
+	.order-result__delivery{
+		float: none;
+		overflow: hidden;
+		margin-bottom: 20px;
+		width: 100%;
+	}
+
+	.order-result__check{
+		margin-left: 0;
+		border: 2px solid #282119;
+	}
+
 }
 
 

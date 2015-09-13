@@ -1540,6 +1540,335 @@
 				<div class="info">
 					<div class="info__item">
 						Стоимость (<span class="info__goods">0 товаров</span>)
+						<div class="info__val"><i class="rub js-order-result-price-rub js-price-check">0</i> руб</div>
+					</div>
+					<div class="info__item">
+						Доставка по России
+						<div class="info__val">оплата при получении</div>
+					</div>
+				</div>
+				<div class="calc">
+					<div class="calc__item calc__item_all">
+						ОБЩАЯ СТОИМОСТЬ
+						<div class="calc_val">
+							<span class="rub"><i class="js-order-result-price-rub">0</i> руб</span>
+							<span class="usd">($ <i class="js-order-result-price-usd">0</i>)</span>
+						</div>
+					</div>
+					<div class="calc__item calc__item_advance">
+						СУММА К ОПЛАТЕ
+						<div class="calc_val">
+							<span class="rub"><i class="js-order-result-price-rub_advance">0</i> руб</span>
+							<span class="usd">($ <i class="js-order-result-price-usd_advance">0</i>)</span>
+						</div>
+					</div>
+				</div>
+				<div class="footnote">Предоплата 30% <a href="#">подробнее</a></div>
+			</div>
+		</div>
+
+		<div class="next">
+			<a href="#" class="btn btn_brdr btn_solid js-order-goto-delivery">Перейти к оплате</a>
+		</div>
+	</section>
+
+	<section class="section_delivery section_delivery-method">
+		<div class="title">Выберите вариант доставки</div>
+
+		<div class="field-group field-group_brdr">
+			<div class="field-item">
+				<div class="input-field input-field_main">
+					<label><input type="radio" name="delivery-operator" value="Самовывоз из СПб"><i class="marker"></i>Самовывоз из СПб</label>
+				</div>
+			</div>
+			<div class="field-footnote">Вы сможете забрать груз самостоятельно по адресу : пр.Энгельса 154</div>
+		</div>
+
+		<div class="field-group field-group_brdr">
+			<div class="field-item">
+				<div class="input-field input-field_main">
+					<label><input type="radio" name="delivery-operator" value="Деловые линии"><i class="marker"></i>Деловые линии</label> <img src="img/delivery/delline.png" alt="">
+				</div>
+			</div>
+			<div class="field-item">
+				<div class="input-field"><label><input type="radio" name="delivery-place" value="Доставка до двери"><i class="marker"></i>Доставка до двери</label></div>
+				<div class="input-field"><label><input type="radio" name="delivery-place" value="Доставка до терминала оператора"><i class="marker"></i>Доставка до терминала оператора</label></div>
+			</div>
+			<div class="field-info">Компания "Деловые Линии", это крупнейшая транспортная компания России.<br>Отправки более чем в 100 городов России по наиболее приемлемым ценам.</div>
+			<div class="field-footnote"><a href="#">Калькулятор стоимости</a> (Вы будете перенаправлены на сайт оператора)</div>
+		</div>
+
+		<div class="field-group field-group_brdr">
+			<div class="field-item">
+				<div class="input-field input-field_main"><label><input type="radio" name="delivery-operator" value="ПЭК"><i class="marker"></i>ПЭК</label> <img src="img/delivery/pek.png" alt=""></div>
+			</div>
+			<div class="field-info">Компания "ПЭК", это крупнейшая транспортная компания России.<br>Отправки более чем в 100 городов России по наиболее приемлемым ценам.</div>
+			<div class="field-footnote"><a href="#">Калькулятор стоимости</a> (Вы будете перенаправлены на сайт оператора)</div>
+		</div>
+
+		<div class="field-group field-group_brdr">
+			<div class="field-item">
+				<div class="input-field input-field_main"><label><input type="radio" name="delivery-operator" value="ЕМС"><i class="marker"></i>ЕМС</label> <img src="img/delivery/ems.png" alt=""></div>
+			</div>
+			<div class="field-info">Компания "ЕМС", это крупнейшая транспортная компания России.<br>Отправки более чем в 100 городов России по наиболее приемлемым ценам.</div>
+			<div class="field-footnote"><a href="#">Калькулятор стоимости</a> (Вы будете перенаправлены на сайт оператора)</div>
+		</div>
+
+		<div class="field-group field-group_brdr">
+			<div class="field-item">
+				<div class="input-field input-field_main"><label><input class="js-order-other-deliver-radio" type="radio" name="delivery-operator" value="ДРУГАЯ ТРАНСПОРТНАЯ КОМПАНИЯ"><i class="marker"></i>ДРУГАЯ ТРАНСПОРТНАЯ КОМПАНИЯ</label></div>
+			</div>
+			<div class="field-item">
+				<div class="field-item__input">
+					<div class="ie8-plaplaceholder">Введите название транспортной компании</div>
+					<div class="input">
+						<input type="text" placeholder="Введите название транспортной компании">
+					</div>
+					<div class="message">Пожалуйста, введите название транспортной компании</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footnote">Внимание! Доставка груза по России оплачивается получателем в офисе транспортной компании в момент получения груза.</div>
+
+		<div class="next">
+			<a href="#" class="btn btn_brdr btn_solid js-order-goto-place">Продолжить</a>
+		</div>
+	</section>
+
+	<section class="section_delivery section_delivery-place">
+		<div class="title">Адрес доставки</div>
+
+		<div class="field-group field-group_brdr">
+			<div class="field-item">
+				<div class="input-field"><img src="img/delivery/delline.png" alt=""></div>
+				<div class="input-field"><label><input type="radio" name="delivery-place_1" value="Доставка до двери"><i class="marker"></i>Доставка до двери</label></div>
+				<div class="input-field"><label><input type="radio" name="delivery-place_1" value="Доставка до терминала оператора"><i class="marker"></i>Доставка до терминала оператора</label></div>
+			</div>
+		</div>
+
+		<div class="subtitle">Укажите ФИО получателя груза
+			<div class="btn btn_brdr btn_solid btn_adress">Выбрать из моих адресов</div>
+		</div>
+
+		<div class="field-item">
+			<div class="field-item__input w w50">
+				<div class="ie8-plaplaceholder">Имя*</div>
+				<div class="input">
+					<input type="text" class="required" placeholder="Имя*">
+				</div>
+				<div class="message">Пожалуйста, введите имя</div>
+			</div>
+			<div class="field-item__input w w50">
+				<div class="ie8-plaplaceholder">Фамилия*</div>
+				<div class="input">
+					<input type="text" class="required" placeholder="Фамилия*">
+				</div>
+				<div class="message">Пожалуйста, введите фамилию</div>
+			</div>
+		</div>
+		<div class="field-item">
+			<div class="field-item__input w w50">
+				<div class="ie8-plaplaceholder">Отчество*</div>
+				<div class="input">
+					<input type="text" class="required" placeholder="Отчество*">
+				</div>
+				<div class="message">Пожалуйста, введите отчество</div>
+			</div>
+		</div>
+
+		<div class="subtitle">Укажите контактный телефон получателя</div>
+
+		<div class="field-item">
+			<div class="field-item__input w w66">
+				<div class="ie8-plaplaceholder">Контактный телефон*</div>
+				<div class="input">
+					<input type="text" class="required" placeholder="Контактный телефон*">
+				</div>
+				<div class="message">Пожалуйста, введите контактный телефон</div>
+			</div>
+			<div class="field-item__input w w33">
+				<div class="ie8-plaplaceholder">&nbsp;</div>
+				<a class="btn btn_brdr btn_solid js-order-add-phone-number">Добавить еще телефон</a>
+			</div>
+		</div>
+
+		<div class="subtitle">Укажите адрес доставки груза</div>
+
+		<div class="field-item">
+			<div class="field-item__input">
+				<div class="ie8-plaplaceholder">Страна*</div>
+				<div class="input input_autocomplete">
+					<input class="input_autocomplete__input required" type="text" placeholder="Страна*">
+					<div class="input_autocomplete__result"></div>
+				</div>
+				<div class="message">Пожалуйста, введите страну</div>
+			</div>
+		</div>
+		<div class="field-item">
+			<div class="field-item__input">
+				<div class="ie8-plaplaceholder">Регион*</div>
+				<div class="input input_autocomplete">
+					<input class="input_autocomplete__input required" type="text" placeholder="Регион*">
+					<div class="input_autocomplete__result"></div>
+				</div>
+				<div class="message">Пожалуйста, введите регион</div>
+			</div>
+		</div>
+		<div class="field-item">
+			<div class="field-item__input">
+				<div class="ie8-plaplaceholder">Город/населенный пункт*</div>
+				<div class="input input_autocomplete">
+					<input class="input_autocomplete__input required" type="text" placeholder="Город/населенный пункт*">
+					<div class="input_autocomplete__result"></div>
+				</div>
+				<div class="message">Пожалуйста, введите город или населенный пункт</div>
+			</div>
+		</div>
+		<div class="field-item">
+			<div class="field-item__input w w66">
+				<div class="ie8-plaplaceholder">Улица*</div>
+				<div class="input">
+					<input type="text" class="required" placeholder="Улица*">
+				</div>
+				<div class="message">Пожалуйста, введите название улицы</div>
+			</div>
+			<div class="field-item__input w w33">
+				<div class="ie8-plaplaceholder">Индекс*</div>
+				<div class="input">
+					<input type="text" class="required" placeholder="Индекс*">
+				</div>
+				<div class="message"></div>
+			</div>
+		</div>
+		<div class="field-item">
+			<div class="field-item__input w w33">
+				<div class="ie8-plaplaceholder">Дом*</div>
+				<div class="input">
+					<input type="text" class="required" placeholder="Дом*">
+				</div>
+				<div class="message">Пожалуйста, введите номер дома</div>
+			</div>
+			<div class="field-item__input w w15">
+				<div class="ie8-plaplaceholder">Корпус</div>
+				<div class="input">
+					<input type="text" placeholder="Корпус">
+				</div>
+			</div>
+			<div class="field-item__input w w15">
+				<div class="ie8-plaplaceholder">Литера</div>
+				<div class="input">
+					<input type="text" placeholder="Литера">
+				</div>
+			</div>
+			<div class="field-item__input w w33">
+				<div class="ie8-plaplaceholder">Квартира/офис*</div>
+				<div class="input">
+					<input type="text" class="required" placeholder="Квартира/офис*">
+				</div>
+				<div class="message">Пожалуйста, введите номер квартиры или офиса</div>
+			</div>
+		</div>
+
+		<div class="field-item">
+			<div class="field-item__list">
+				<div><b>Адрес:</b> Комсомольская ул, 14</div>
+				<div><b>Координаты:</b> 56.8972 с.ш., 59.9617 в.д.</div>
+				<div><b>Контакт-центр:</b> 8 800 100-8000</div>
+				<div><b>С мобильного телефона:</b> 0520</div>
+				<div><b>Телефон:</b> +7 (3439) 64-27-27</div>
+			</div>
+			<div class="field-item__map">
+			</div>
+		</div>
+
+		<div class="footnote">Поля, отмеченные * обязательны для заполнения</div>
+
+		<div class="next">
+			<a href="#" class="btn btn_brdr btn_solid js-order-goto-pay">Перейти к оплате</a>
+		</div>
+
+	</section>
+
+	<section class="section_delivery section_delivery-payment">
+		<div class="title">Способ оплаты</div>
+
+		<div class="field-group">
+			<div class="field-item field-item-payment">
+				<div class="input-field"><label><input type="radio" name="delivery-payment" value="PayPal"><i class="marker"></i>PayPal</label></div>
+				<div class="input-field"><img src="img/delivery/paypal.png" alt=""></div>
+				<div class="input-field input-field_commission">4.90%</div>
+			</div>
+			<div class="field-item field-item-payment_info">
+				<div class="price">
+					<span class="price__name">PayPal</span>
+					<span class="price__rub"><i class="js-order-result-price-rub_advance">0</i> руб.</span>
+					<span class="price__usd">($ <i class="js-order-result-price-usd_advance">0</i>)</span>
+				</div>
+				<div class="note">Совершайте быстрые и удобные платежи через систему PayPal без комиссии.</div>
+				<div class="text">Если вы согласны с условиями оплаты, вы будете перенаправлены на сайт<br>компании PayPal, для завершения платежа.</div>
+				<div class="confirm input-field"><label><input type="checkbox" name="delivery-payment" value="PayPal"><i class="marker"></i>Я согласен с условиями оплаты через систему PayPal</label></div>
+			</div>
+		</div>
+		<div class="field-group">
+			<div class="field-item field-item-payment">
+				<div class="input-field"><label><input type="radio" name="delivery-payment" value="Credit Card"><i class="marker"></i>Credit Card</label></div>
+				<div class="input-field"><img src="img/delivery/visa.png" alt=""></div>
+				<div class="input-field"><img src="img/delivery/mastercard.png" alt=""></div>
+				<div class="input-field input-field_commission">4.90%</div>
+			</div>
+			<div class="field-item field-item-payment_info">
+				<div class="price">
+					<span class="price__name">Credit Card</span>
+					<span class="price__rub"><i class="js-order-result-price-rub_advance">0</i> руб.</span>
+					<span class="price__usd">($ <i class="js-order-result-price-usd_advance">0</i>)</span>
+				</div>
+				<div class="note">Совершайте быстрые и удобные платежи через систему PayPal без комиссии.</div>
+				<div class="text">Если вы согласны с условиями оплаты, вы будете перенаправлены на сайт<br>компании Credit Card, для завершения платежа.</div>
+				<div class="confirm input-field"><label><input type="checkbox" name="delivery-payment" value="PayPal"><i class="marker"></i>Я согласен с условиями оплаты через систему PayPal</label></div>
+			</div>
+		</div>
+		<div class="field-group">
+			<div class="field-item field-item-payment">
+				<div class="input-field"><label><input type="radio" name="delivery-payment" value="Яндекс Деньги"><i class="marker"></i>Яндекс Деньги</label></div>
+				<div class="input-field"><img src="img/delivery/yamoney.png" alt=""></div>
+				<div class="input-field input-field_commission">4.90%</div>
+			</div>
+			<div class="field-item field-item-payment_info">
+				<div class="price">
+					<span class="price__name">Яндекс Деньги</span>
+					<span class="price__rub"><i class="js-order-result-price-rub_advance">0</i> руб.</span>
+					<span class="price__usd">($ <i class="js-order-result-price-usd_advance">0</i>)</span>
+				</div>
+				<div class="note">Совершайте быстрые и удобные платежи через систему Яндекс Деньги без комиссии.</div>
+				<div class="text">Если вы согласны с условиями оплаты, вы будете перенаправлены на сайт<br>компании PayPal, для завершения платежа.</div>
+				<div class="confirm input-field"><label><input type="checkbox" name="delivery-payment" value="PayPal"><i class="marker"></i>Я согласен с условиями оплаты через систему PayPal</label></div>
+			</div>
+		</div>
+		<div class="field-group">
+			<div class="field-item field-item-payment">
+				<div class="input-field"><label><input type="radio" name="delivery-payment" value="QIWI кошелек"><i class="marker"></i>QIWI кошелек</label></div>
+				<div class="input-field"><img src="img/delivery/qiwi.png" alt=""></div>
+				<div class="input-field input-field_commission">4.90%</div>
+			</div>
+			<div class="field-item field-item-payment_info">
+				<div class="price">
+					<span class="price__name">QIWI кошелек</span>
+					<span class="price__rub"><i class="js-order-result-price-rub_advance">0</i> руб.</span>
+					<span class="price__usd">($ <i class="js-order-result-price-usd_advance">0</i>)</span>
+				</div>
+				<div class="note">Совершайте быстрые и удобные платежи через систему PayPal без комиссии.</div>
+				<div class="text">Если вы согласны с условиями оплаты, вы будете перенаправлены на сайт<br>компании QIWI кошелек, для завершения платежа.</div>
+				<div class="confirm input-field"><label><input type="checkbox" name="delivery-payment" value="PayPal"><i class="marker"></i>Я согласен с условиями оплаты через систему PayPal</label></div>
+			</div>
+		</div>
+
+
+		<div class="order-result">
+			<div class="order-result__check">
+				<div class="info">
+					<div class="info__item">
+						Стоимость (<span class="info__goods">0 товаров</span>)
 						<div class="info__val"><i class="rub">0</i> руб</div>
 					</div>
 					<div class="info__item">
@@ -1551,112 +1880,27 @@
 					<div class="calc__item calc__item_all">
 						ОБЩАЯ СТОИМОСТЬ
 						<div class="calc_val">
-							<span class="rub"><i>0</i> руб</span>
-							<span class="usd">($ <i>0</i>)</span>
+							<span class="rub"><i class="js-order-result-price-rub">0</i> руб</span>
+							<span class="usd">($ <i class="js-order-result-price-usd">0</i>)</span>
 						</div>
 					</div>
 					<div class="calc__item calc__item_advance">
 						СУММА К ОПЛАТЕ
 						<div class="calc_val">
-							<span class="rub"><i>0</i> руб</span>
-							<span class="usd">($ <i>0</i>)</span>
+							<span class="rub"><i class="js-order-result-price-rub_advance">0</i> руб</span>
+							<span class="usd">($ <i class="js-order-result-price-usd_advance">0</i>)</span>
 						</div>
 					</div>
 				</div>
 				<div class="footnote">Предоплата 30% <a href="#">подробнее</a></div>
+
+				<div class="next">
+					<a href="#" class="btn btn_brdr btn_solid js-order-pay">Оплатить</a>
+				</div>
 			</div>
 		</div>
 
-
 	</section>
-
-
-	<style>
-
-		.order-result i{
-			font: inherit;
-		}
-		.order-result__check .info{
-			padding-bottom: 10px;
-			border-bottom: 1px solid #e5e5e5;
-			margin: 20px 10px 10px;
-		}
-		.order-result__check .info__item{
-			margin: 0 35px 5px;
-			position: relative;
-			font-size: 16px;
-		}
-		.order-result__check .info__item:before{
-			content: '';
-			display: block;
-			position: absolute;
-			height: 5px;
-			width: 5px;
-			-webkit-border-radius: 50%;
-			-moz-border-radius: 50%;
-			border-radius: 50%;
-			background: #282119;
-			top: 8px;
-			left: -15px;
-		}
-		.order-result__check .info__val{
-			float: right;
-		}
-		.order-result__check .info__val .rub{
-			font: inherit;
-			font-weight: 600;
-		}
-
-		.order-result__check .calc{
-			margin: 10px 10px 15px;
-		}
-		.order-result__check .calc__item{
-			margin: 0 35px 5px;
-			position: relative;
-			font-size: 18px;
-			font-weight: 600;
-		}
-		.order-result__check .calc__item:before{
-			content: '';
-			display: block;
-			position: absolute;
-			height: 5px;
-			width: 5px;
-			-webkit-border-radius: 50%;
-			-moz-border-radius: 50%;
-			border-radius: 50%;
-			background: #282119;
-			top: 8px;
-			left: -15px;
-		}
-
-		.order-result__check .calc_val{
-			float: right;
-		}
-		.order-result__check .calc_val .rub{
-			color: #ff6e08;
-		}
-		.order-result__check .calc_val .usd{
-			color: #282119;
-			font-weight: 300;
-			font-size: 16px;
-		}
-		.order-result .footnote{
-			font-weight: 300;
-			font-size: 14px;
-			margin: 5px 30px 15px;
-		}
-		.order-result .footnote a{
-			color: #ff6e08;
-			text-decoration: none!important;
-			border-bottom: 1px dashed #ff6e08;
-		}
-		.order-result .footnote a:hover{
-			border-bottom-color: transparent;
-		}
-
-	</style>
-
 
 
 	<footer class="footer">
