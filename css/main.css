@@ -1673,7 +1673,7 @@
 .increase-box .increase-btn{
 	width: 29px;
 	height: 14px;
-	background: #282119;
+	background: #625745;
 	line-height: 10px;
 	position: absolute;
 	right: 0;
@@ -1687,6 +1687,9 @@
 .increase-box .increase-btn_up{top: 0;}
 .increase-box .increase-btn_down{bottom: 0;}
 
+.increase-box .increase-btn:hover{
+	background: #282119;
+}
 
 .order-table .few{display: none}
 .order-table .order-item_few .no-few{display: none}
@@ -2035,6 +2038,12 @@
 
 .section_delivery .field-item{
 	/*overflow: hidden;*/
+}
+.section_delivery .field-item_delivery-place{
+	display: none;
+}
+.field-group.active .field-item_delivery-place{
+	display: block;
 }
 .section_delivery .field-item__list{
 	color: #57524c;

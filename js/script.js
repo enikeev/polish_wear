@@ -124,7 +124,7 @@ function declOfNum(number, titles){
 					if ( activeOperator.size() <=0 ){
 						alert('Выберите вариант доставки')
 					} else {
-						var placeMethod = activeOperator.closest('.field-group').find('input[name=delivery-place]');
+						var placeMethod = activeOperator.closest('.field-group').find('input[name^=delivery-place]');
 						if ( placeMethod.size() && placeMethod.filter(':checked').size() <= 0 ){
 							alert('Выберите место доставки')
 						} else if ( activeOperator.hasClass('js-order-other-deliver-radio') && !activeOperator.closest('.field-group').find('input[type=text]').val() ) {
