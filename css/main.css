@@ -1603,7 +1603,7 @@
 	color: #8c8984;
 }
 .order-table .pict{}
-.order-table .increase{}
+.order-table .increase{width: 120px}
 .order-table .price-uno .price-rub{font-size: 18px;margin-bottom: 10px;}
 .order-table .price-uno .price-rub span{font-weight: 600;}
 .order-table .price-uno .price-usd{color: #8c8984;}
@@ -1643,12 +1643,32 @@
 }
 .increase-box .increase-num{
 	display: block;
-	min-width: 20px;
+	text-align: center;
+	padding: 0;
+	height: 29px;
+}
+.increase-box .increase-num input{
+	display: block;
 	text-align: center;
 	padding: 5px;
-	height: 19px;
+	height: 17px;
 	line-height: 17px;
 	background: #282119;
+	width: 20px;
+	font: inherit;
+	color: #fff;
+	border: 1px solid #282119;
+
+	-webkit-transition: width 0.2s ease;
+	-moz-transition: width 0.2s ease;
+	-ms-transition: width 0.2s ease;
+	-o-transition: width 0.2s ease;
+	transition: width 0.2s ease;
+}
+.increase-box .increase-num input:focus{
+	background: #fff;
+	color: #282119;
+	width: 30px;
 }
 .increase-box .increase-btn{
 	width: 29px;

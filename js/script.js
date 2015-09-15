@@ -38,7 +38,7 @@ function declOfNum(number, titles){
 					$(this).find('.order-item').each(function(){
 						var $this = $(this);
 						var max = $this.data('max');
-						var sumItem = +$this.find('.increase-num').text();
+						var sumItem = +$this.find('.increase-num input').val();
 						var priceItemRUB = +$this.find('.price-uno .price-rub span').text().replace(' ', '');
 						var priceItemUSD = +$this.find('.price-uno .price-usd span').text().replace(',', '.');
 						var rub = sumItem * priceItemRUB;
@@ -293,11 +293,26 @@ function declOfNum(number, titles){
 
 			$('.increase-btn').click(function(){
 				var $p = $(this).closest('.increase-box');
-				var val = $p.find('.increase-num');
+				var inpt = $p.find('.increase-num input');
 
-				if ( $(this).hasClass('increase-btn_up') ){ val.text(+val.text()+1); }
-				else if ( val.text() > 0 ) { val.text(+val.text()-1); }
+				if ( $(this).hasClass('increase-btn_up') ){ inpt.val(+inpt.val()+1); }
+				else if ( inpt.val() > 0 ) { inpt.val(+inpt.val()-1); }
 
+				app.order.check();
+			});
+
+			$('.increase-num input').on('click', function(){
+				$(this).select();
+			}).on("keyup input", function() {
+				if ( $(this).val().match(/[^0-9]/g) ) {
+					var _newVal = $(this).val().replace(/[^0-9]/g, '');
+					$(this).val(_newVal);
+				}
+				app.order.check();
+			}).on("change", function() {
+				if ( !$(this).val() ) {
+					$(this).val('0');
+				}
 				app.order.check();
 			});
 
