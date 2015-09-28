@@ -22,6 +22,40 @@ function declOfNum(number, titles){
 
 (function(){
 	var app = {
+		datepicker: function(){
+
+			var di = $('.date-input');
+
+			if ( di.size() ){
+
+				if ( $('.input-daterange').size() ){
+
+					var nowTemp = new Date();
+
+					var valDay = nowTemp.getDate().toString().length > 1 ? nowTemp.getDate() : '0' + nowTemp.getDate();
+					var valMonth = (nowTemp.getMonth()+1).toString().length > 1 ? ( nowTemp.getMonth() + 1 ) : '0' + ( nowTemp.getMonth() + 1 );
+					var valYear = nowTemp.getFullYear();
+
+					di.each(function(){
+						if ( !$(this).val() ){
+							$(this).val( valDay + '.' + valMonth + '.' + valYear );
+						}
+					});
+
+					$('.input-daterange').each(function(){
+						$(this).datepicker({startDate: "new Date()"});
+					});
+				}
+
+
+				di.each(function(){
+					$(this).datepicker();
+				});
+
+
+			}
+
+		},
 		order: {
 			check: function(){
 				var priceAllRUB = 0;
@@ -273,6 +307,7 @@ function declOfNum(number, titles){
 			app.order.check();
 			app.delivery.init();
 			app.brands.init();
+			app.datepicker();
 
 			$('.order-item-checkbox').change(app.order.check);
 			$('.order-group-checkbox').change(function(){
@@ -640,5 +675,30 @@ $(function(){
 
 
 
+
+
+//lk
+
+	$('.js-settings-change').click(function(){
+		$(this).closest('tr').toggleClass('change');
+	});
+	$('.js-settings-confirm').click(function(){
+		var wrap = $(this).closest('tr');
+		var inpt = wrap.find('input');
+		var vl = wrap.find('.val .show');
+
+		vl.text(inpt.val());
+
+		//after change
+		wrap.removeClass('change');
+	});
+
+
 });
+
+
+
+
+
+
 

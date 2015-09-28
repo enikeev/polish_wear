@@ -1,0 +1,230 @@
+
+.datepicker{
+  position:absolute;
+  background:#ffffff;
+  font-size:14px;
+  color:#757b87;
+  width:207px;
+  margin-top:-1px;
+  border:1px solid #282119;
+  font-weight:300;
+  height:200px;
+	z-index: 100;
+}
+.datepicker table{
+  width:100%;
+}
+.datepicker table th,
+.datepicker table td{
+  font-weight:300;
+  text-align:center;
+}
+
+
+.datepicker .datepicker-header{
+  background:#282119;
+  height:34px;
+}
+.datepicker .datepicker-header th{
+  vertical-align:middle;
+  color:#fff;
+  padding:5px 0 7px;
+  /*cursor:pointer;*/
+}
+
+.datepicker .datepicker-header .prev i,
+.datepicker .datepicker-header .next i{
+  font-style:normal;
+  display:inline-block;
+  width:18px;
+  height:18px;
+  border:1px solid transparent;
+  border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+}
+.datepicker .datepicker-header .prev:hover i,
+.datepicker .datepicker-header .next:hover i{
+  border-color:#fff;
+  cursor:pointer;
+}
+.datepicker .datepicker-header .prev.disable i,
+.datepicker .datepicker-header .next.disable i{
+  /*display: none;*/
+  opacity: 0;
+  cursor:default!important;
+}
+
+
+.datepicker .dow:first-child,
+.datepicker tbody tr td:first-child {padding-left:10px;}
+
+.datepicker .dow:last-child,
+.datepicker tbody tr td:last-child {padding-right:10px;}
+
+.datepicker tbody tr td:last-child {padding-right:10px;}
+
+
+.datepicker .datepicker-switch{
+  width:65%;
+	cursor:pointer;
+}
+.datepicker .datepicker-switch:hover{
+  text-decoration:underline;
+}
+.datepicker .dow{
+  padding:5px 0 8px;
+  width:10%;
+  text-align:center;
+}
+.datepicker .day{
+  width:10%;
+  text-align:center;
+  padding:1px 2px;
+}
+
+.datepicker .day i {
+  display:inline-block;
+  min-width:18px;
+  height:18px;
+  border:1px solid transparent;
+  cursor:pointer;
+  font-style:normal;
+  line-height:15px;
+
+  border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+}
+
+.datepicker .day.disabled i{
+  color:#bbb;
+  cursor:default;
+}
+.datepicker .day.old i,
+.datepicker .day.new i{
+  color:#bbb;
+}
+.datepicker .day.today i{
+  /*background:#3fb4c6;*/
+  border-color:#282119;
+}
+.datepicker .day.selected i,
+.datepicker .day.range i{
+  background:#dbdddf;
+}
+
+.datepicker .day.active i{
+  background:#282119;
+  border-color:#282119;
+  color:#fff;
+}
+.datepicker .day.selected.old i,
+.datepicker .day.selected.new i,
+.datepicker .day.range.old i,
+.datepicker .day.range.new i{
+  background:#f2f3f4;
+}
+
+.datepicker .day:hover i {border-color:#282119;}
+.datepicker .disabled:hover i {border-color:transparent;}
+
+
+
+.datepicker .datepicker-cp{
+  padding-top:12px;
+}
+
+
+
+.datepicker .month,
+.datepicker .year{
+  display:block;
+  float:left;
+  width:25%;
+  text-align:center;
+  padding:13px 0;
+}
+
+.datepicker .month i,
+.datepicker .year i{
+  display:inline-block;
+  height:18px;
+  padding:0 7px;
+  border:1px solid transparent;
+  cursor:pointer;
+  font-style:normal;
+  line-height:15px;
+
+  border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+}
+
+.datepicker .month i:hover,
+.datepicker .year i:hover{
+  border-color:#282119;
+}
+
+.datepicker .month.disabled i,
+.datepicker .year.disabled i{
+  cursor:default;
+  color:#dbdddf;
+  border-color:transparent;
+}
+
+.datepicker .month.active i,
+.datepicker .year.active i{
+  color:#fff;
+  border-color:#282119;
+  background:#282119;
+}
+
+.datepicker .disabled:hover{
+  cursor:default!important;
+}
+
+
+
+
+
+@media screen and (max-width: 1560px) {	/* 1600 - 1184 - 1224 */
+	.datepicker{
+		font-size:11px;
+		width: 160px;
+		height: 170px;
+	}
+	.datepicker .dow:first-child,
+	.datepicker tbody tr td:first-child {
+		padding-left: 5px;
+	}
+	.datepicker tbody tr td:last-child {
+		padding-right: 5px;
+	}
+	.datepicker .datepicker-header th {
+		padding: 2px 0 4px;
+	}
+	.datepicker .datepicker-header .prev i,
+	.datepicker .datepicker-header .next i {
+		height: 14px;
+		width: 14px;
+	}
+	.datepicker .day i {
+		height: 14px;
+		line-height: 12px;
+		min-width: 14px;
+	}
+
+	.datepicker .month, .datepicker .year {
+		padding: 9px 0;
+	}
+}
+
+@media screen and (max-width: 1264px) {	/* 1366 - 1070 - 1110 */
+	.datepicker{
+		width: 152px;
+	}
+	.datepicker .datepicker-header {
+		height: 30px;
+	}
+}

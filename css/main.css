@@ -1196,6 +1196,10 @@
 	font-weight: 100;
 	margin: 7px 0;
 }
+.catalog-nav__title.big{
+	font-size: 20px;
+	font-weight: 400;
+}
 .catalog-nav__list{
 	margin-left: 20px;
 	color: #7e7d7b;
@@ -2215,6 +2219,136 @@
 .section_delivery-payment .order-result .order-result__check{margin: 0;}
 
 
+
+
+.section_catalog b{
+	font-weight: 600;
+}
+
+
+.user-info{
+	border: 1px solid #e5e5e5;
+	background: #fcfcfc;
+	padding: 18px 20px;
+	margin: 0 0 25px;
+}
+.catalog-filter{
+	margin: 15px 0;
+	border: 1px solid #e5e5e5;
+	background: #fcfcfc;
+	padding: 5px 15px;
+}
+.catalog-filter span{
+	display: inline-block;
+	vertical-align: middle;
+}
+.section_catalog_lk .btn_brdr{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 14px;
+	height: 20px;
+	line-height: 18px;
+	padding: 0 20px;
+	margin: 0 10px;
+}
+.catalog-filter .input-daterange {
+	border: 1px solid #e5e5e5;
+	background: #fff;
+	padding: 0 5px;
+}
+.catalog-filter .input-daterange .item_date{
+	display: inline-block;
+	vertical-align: middle;
+}
+.catalog-filter .input-daterange .date-input{
+	border: none;
+	padding: 0;
+	margin: 0;
+	width: 82px;
+	background: url("../img/global/icon-date.png") no-repeat 100% 50%;
+}
+
+.catalog-table{
+	margin: 15px 0;
+}
+.catalog-table table.orders{
+	width: 100%;
+	text-align: center;
+}
+.catalog-table table.orders tr{border: 1px solid #e5e5e5;}
+.catalog-table table.orders th{
+	background: #fcfcfc;
+	padding: 5px 10px;
+}
+.catalog-table table.orders td{
+	padding: 15px 10px;
+	vertical-align: middle;
+}
+.color-light{color: #7e7d7b}
+
+
+.catalog-table table.settings{
+	width: 100%;
+	text-align: left;
+	margin: 15px 0;
+}
+.catalog-table table.settings td{
+	border-bottom: 1px solid #e5e5e5;
+	padding: 3px 10px;
+	height: 35px;
+	vertical-align: middle;
+}
+.catalog-table table.settings .name{
+	width: 150px;
+	color: #7e7d7b;
+}
+.catalog-table table.settings .set{
+	text-align: right;
+}
+.catalog-table table.settings .set .show{
+	color: #ff6e08;
+}
+.catalog-table table.settings .val input{
+	border: 1px solid #8c8984;
+	padding: 5px 10px;
+	margin: 2px 0;
+	width: 440px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.catalog-table table.settings .val input.date-input{
+	background: url("../img/global/icon-date.png") no-repeat 97% 50%;
+}
+.catalog-table table.settings .set{
+	white-space: nowrap;
+}
+.catalog-table table.settings .set .btn_brdr{
+	padding: 5px 0;
+	font-size: 16px;
+	text-align: center;
+	width: 140px;
+	margin: 2px 3px;
+}
+
+.catalog-table table.settings .hide{
+	display: none;
+}
+.catalog-table table.settings .change .hide{display: block;}
+.catalog-table table.settings .change .show{display: none;}
+.catalog-table table.settings .change .val,
+.catalog-table table.settings .change .set
+{vertical-align: bottom}
+
+
+
+
+
+
+
+
+
+
 /**/
 
 .section_delivery-method,
@@ -2223,4 +2357,8 @@
 	display: none
 }
 
+
 .ie8-plaplaceholder{display: none;}
+
+
+
