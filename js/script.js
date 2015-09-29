@@ -679,10 +679,12 @@ $(function(){
 
 //lk
 
-	$('.js-settings-change').click(function(){
+	$('.js-settings-change').click(function(e){
+		e.preventDefault();
 		$(this).closest('tr').toggleClass('change');
 	});
-	$('.js-settings-confirm').click(function(){
+	$('.js-settings-confirm').click(function(e){
+		e.preventDefault();
 		var wrap = $(this).closest('tr');
 		var inpt = wrap.find('input');
 		var vl = wrap.find('.val .show');
