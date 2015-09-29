@@ -2065,7 +2065,7 @@
 	font-weight: 400;
 	color: #282119;
 }
-.section_delivery .field-item__input .input{
+.field-item__input .input{
 	display: block;
 	border: 1px solid #8c8984;
 	height: 28px;
@@ -2073,20 +2073,25 @@
 	padding: 0 10px;
 	position: relative;
 }
-.section_delivery .field-item__input .input_autocomplete input{
+.field-item__input .input_autocomplete input{
 	background: url("../img/global/list-arrow-down.png") no-repeat 101% 65%;
+	border: none!important;
+	width: 100% !important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
-.section_delivery .field-item__input .input_autocomplete input:focus{
+.field-item__input .input_autocomplete input:focus{
 	background-image: url("../img/global/list-arrow-up.png");
 }
 
 
 
-.section_delivery .field-item__input .input_autocomplete__select{
+.field-item__input .input_autocomplete__select{
 	position: absolute;
 	display: none;
 }
-.section_delivery .field-item__input .input_autocomplete__result{
+.field-item__input .input_autocomplete__result{
 	position: absolute;
 	top: 28px;
 	border: 1px solid #8c8984;
@@ -2097,15 +2102,15 @@
 	background: #fff;
 	overflow: hidden;
 }
-.section_delivery .field-item__input .input_autocomplete.active .input_autocomplete__result{
+.field-item__input .input_autocomplete.active .input_autocomplete__result{
 	z-index: 100;
 }
-.section_delivery .field-item__input .input_autocomplete__result ul{
+.field-item__input .input_autocomplete__result ul{
 	font-weight: 300;
 	margin: 0 10px;
 	border-top: 1px solid #8c8984;
 }
-.section_delivery .field-item__input .input_autocomplete__result ul .ac-highlight{
+.field-item__input .input_autocomplete__result ul .ac-highlight{
 	text-decoration: underline;
 	font-weight: 400;
 }
@@ -2116,7 +2121,7 @@
 
 
 
-.section_delivery .field-item__input .message{
+.field-item__input .message{
 	font-size: 12px;
 	font-weight: 300;
 	padding: 2px 0 5px;
@@ -2232,6 +2237,11 @@
 	padding: 18px 20px;
 	margin: 0 0 25px;
 }
+.catalog-title{
+	font-size: 30px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
 .catalog-filter{
 	margin: 15px 0;
 	border: 1px solid #e5e5e5;
@@ -2312,7 +2322,7 @@
 	border: 1px solid #8c8984;
 	padding: 5px 10px;
 	margin: 2px 0;
-	width: 440px;
+	width: 100%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -2337,17 +2347,69 @@
 .catalog-table table.settings .change .hide{display: block;}
 .catalog-table table.settings .change .show{display: none;}
 .catalog-table table.settings .change .val,
-.catalog-table table.settings .change .set
-{vertical-align: bottom}
+.catalog-table table.settings .change .set{vertical-align: bottom;}
+.catalog-table table.settings .change .set{width: 10px;}
 
 
 
 
+.catalog-table table.password,
+.catalog-table table.registration{width: 100%;}
+.catalog-table table.password td,
+.catalog-table table.registration td{padding: 5px 10px;}
+.catalog-table table.registration td.title{
+	font-size: 18px;
+	font-weight: 600;
+	padding-top: 15px;
+}
+.catalog-table table.password .name,
+.catalog-table table.registration .name{white-space: nowrap;text-align: right;width: 100px;}
+.catalog-table table.password .footnote,
+.catalog-table table.registration .footnote{
+	font-size: 12px;
+	color: #7e7d7b;
+	margin-top: 5px;
+}
+.catalog-table table.password input,
+.catalog-table table.registration input{
+	border: 1px solid #8c8984;
+	padding: 4px 5px;
+	max-width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.catalog-table table.registration .size-1{width: 150px;}
+.catalog-table table.registration .size-2{width: 250px;}
+.catalog-table table.registration .size-3{width: 450px;}
+.catalog-table table.registration .inpt-phone{padding-left: 30px;margin-right: 10px}
+.catalog-table table.registration .inpt-phone-prefix{
+	width: 25px;
+	display: inline-block;
+	text-align: right;
+	margin-right: -25px;
+	z-index: 1;
+	position: relative;
+}
 
 
+.catalog-table table.password .btn_brdr,
+.catalog-table table.registration .btn_brdr{
+	font-size: 16px;
+	margin: 0;
+	padding: 3px 25px 4px;
+	vertical-align: top;
+}
 
 
+.catalog-table .field-item .message{font-size: 12px;display: none;}
+.catalog-table .field-item.error *{color: #ff6e08!important;border-color: #ff6e08!important;}
+.catalog-table .field-item.error .message{display: block;opacity: 1;}
 
+
+.catalog-table table.password .val{vertical-align: middle;}
+.catalog-table table.password input{width: 250px;}
 
 /**/
 
@@ -2362,3 +2424,41 @@
 
 
 
+.pass-recovery{
+	width: 570px;
+	height: 330px;
+	padding: 30px;
+	position: fixed;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+}
+.pass-recovery .title{
+	font-size: 34px;
+	font-weight: 700;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #d4d3d1;
+	margin-bottom: 30px;
+}
+.pass-recovery .subtitle{
+	font-size: 38px;
+	font-weight: 200;
+	margin-bottom: 15px;
+}
+.pass-recovery .text-q{
+	font-size: 16px;
+	color: #ff6e08;
+	margin-bottom: 10px;
+}
+.pass-recovery .error{
+	margin: 20px;
+	color: #fd0820;
+}
+
+.pass-recovery .subscribe{
+	margin-top: 20px;
+	text-align: center;
+}

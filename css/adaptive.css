@@ -104,6 +104,11 @@
 		border: 2px solid #282119;
 	}
 
+
+
+	.section_catalog_lk .catalog-nav{float: none;}
+	.section_catalog_lk .catalog-content{margin-left: 0;}
+
 }
 
 

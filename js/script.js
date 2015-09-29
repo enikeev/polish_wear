@@ -47,14 +47,11 @@ function declOfNum(number, titles){
 					});
 				}
 
-
 				di.each(function(){
 					$(this).datepicker();
 				});
 
-
 			}
-
 		},
 		order: {
 			check: function(){
@@ -298,7 +295,6 @@ function declOfNum(number, titles){
 
 					app.brands.check();
 				});
-
 			}
 		},
 
@@ -696,9 +692,135 @@ $(function(){
 	});
 
 
+	//register
+
+
+	$('.js-submit-register').click(function(e){
+		e.preventDefault();
+
+		var $wrap = $('table.registration');
+		var $required = $wrap.find('.required');
+		var $mail = $wrap.find('.js-val-inpt-mail');
+
+		$required.closest('.field-item').removeClass('error');
+
+		$.trim($required);
+
+		$required.each(function(){
+			if ( $(this).val() == '' ){ $(this).closest('.field-item').addClass('error') }
+		});
+
+		$mail.each(function(){
+			var val = $(this).val();
+			var mes = $(this).closest('.field-item').find('.message');
+			var reg = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+
+			if ( !val ){
+				$(this).closest('.field-item').addClass('error');
+				mes.text('Поле обязательно для заполнения');
+			} else if ( val && !reg.test(val) ){
+				$(this).closest('.field-item').addClass('error');
+				mes.text('Укажите верный email');
+				return false;
+			} else {
+				$(this).closest('.field-item').removeClass('error');
+			}
+
+		});
+
+		if ( $wrap.find('.error').size() ) return false;
+
+	});
+
+	regMatchCheckbox();
+	$('input.checkbox-match').change(function(){
+		regMatchCheckbox();
+	});
+
+	$(document).on('change keyup input click', '.js-val-inpt-num', function() {
+		if ( $(this).val().match(/[^0-9]/g) ) {
+			var _newVal = $(this).val().replace(/[^0-9]/g, '');
+			$(this).val(_newVal);
+		}
+	});
+
+
+	//password change
+
+
+	$('.js-change-password').click(function(){
+		var $wrap = $(this).closest('.password');
+		var newPass = $wrap.find('.js-val-inpt-passw-new');
+		var oldPass = $wrap.find('.js-val-inpt-passw-old');
+		var confPass = $wrap.find('.js-val-inpt-passw-confirm');
+
+		var regRus = /[а-яё]/i;
+		var regNum = /[0-9]/g;
+		var regLat = /[a-z]/i;
+
+		$wrap.find('.error').removeClass('error');
+
+		if ( newPass.val().length < 8 ){
+			newPass.closest('.field-item').addClass('error').find('.message').text('Пароль должен содержать не менее 8 символов');
+
+		} else if ( regRus.test(newPass.val()) || $.trim(newPass.val()) == '' || !regNum.test(newPass.val()) || !regLat.test(newPass.val()) ){
+
+			newPass.closest('.field-item').addClass('error').find('.message').text('Пароль должен содержать буквы латинского алфавита и цифры');
+
+		} else if ( confPass.val() != newPass.val() ) {
+			confPass.closest('.field-item').addClass('error').find('.message').text('Введенные пароли не совпадают');
+		}
+
+
+		if ( $wrap.find('.error').size() ) return false;
+	});
+
+
+
+	//password recovery
+
+	$('.js-recover-password').click(function(){
+		var val = $('.js-recover-password-mail').val();
+		var mes = $(this).closest('.pass-recovery').find('.error');
+		var reg = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+
+		mes.text('');
+
+		if ( !val ){
+			mes.text('Укажите Ваш электронный адрес');
+			return false;
+		} else if ( val && !reg.test(val) ){
+			mes.text('Адрес электронной почты должен содержать символ @');
+			return false;
+		} else {
+		}
+	});
+
+	$('.js-add-new-register-phone').click(function(e){
+		e.preventDefault();
+
+		var wrap = $(this).closest('.input-text');
+		var field = $('<div class="input-text" style="margin-top: 5px">'
+		+				'<i class="inpt-phone-prefix">+7</i>'
+		+				'<input type="text" class="size-1 js-val-inpt-num inpt-phone">'
+		+			'</div>');
+
+		field.insertAfter(wrap);
+
+	});
+
 });
 
-
+function regMatchCheckbox(){
+	$('input.checkbox-match').each(function(){
+		var field = $(this).closest('.input-field').siblings('.input-text');
+		if ( $(this).is(':checked') ){
+			field.hide();
+		} else {
+			field.show();
+		}
+	});
+}
 
 
 
