@@ -809,6 +809,13 @@ $(function(){
 
 	});
 
+	$('.js-get-order-status').click(function(){
+		$('.order-status').fadeIn();
+	});
+	$('.order-status_close').click(function(){
+		$('.order-status').fadeOut();
+	});
+
 });
 
 function regMatchCheckbox(){

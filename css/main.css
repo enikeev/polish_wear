@@ -230,11 +230,11 @@
 	border: none;
 }
 
-.header-account__input{
+.header-account__input {
 	position: relative;
 	margin-left: 5px;
 	vertical-align: middle;
-	display:inline-block;
+	display: inline-block;
 }
 .header-account__input input[type="text"]{
 	border: 1px solid #282119;
@@ -258,6 +258,10 @@
 
 .header-slog{
 	color: rgba(40, 33, 25, 0.71);
+}
+.header-slog img {
+	height: 40px;
+	margin-top: -33px;
 }
 
 /*****************************************************************************
@@ -1050,6 +1054,22 @@
 }
 
 
+.carousel_brands .carousel-item{
+	height:100%;
+}
+
+.carousel_brands .carousel-item a{
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.carousel_brands .carousel-item:after{
+	content:'';
+	display:inline-block;
+	vertical-align:middle;
+	height:100%;
+}
+
 
 
 .prodcard-item{
@@ -1252,6 +1272,13 @@
 	font-size: 16px;
 	line-height: 33px;
 }
+
+.catalog-nav_info .catalog-nav__title{
+	color: #ff6e08;
+	font-size: 18px;
+}
+
+
 
 .filter-title_in{
 	cursor: pointer;
@@ -2411,6 +2438,25 @@
 .catalog-table table.password .val{vertical-align: middle;}
 .catalog-table table.password input{width: 250px;}
 
+
+
+
+
+
+
+.catalog-text h2,
+.catalog-text h3,
+.catalog-text h4{
+	margin: 18px 0 12px;
+	font-weight: 600;
+}
+.catalog-text p{
+	margin: 10px 0;
+}
+
+
+
+
 /**/
 
 .section_delivery-method,
@@ -2461,4 +2507,157 @@
 .pass-recovery .subscribe{
 	margin-top: 20px;
 	text-align: center;
+}
+
+
+
+.section_wrong{
+	text-align: center;
+	font-size: 16px;
+}
+.section_wrong .wrong-logo{
+	text-align: center;
+	margin: 40px 0 110px;
+}
+.section_wrong .wrong-logo img{width: 200px;}
+.section_wrong .wrong-name{
+	font-size: 24px;
+	color: #ff6e08;
+	font-weight: 600;
+	margin-bottom: 25px;
+}
+.section_wrong .wrong-title{
+	font-size: 48px;
+	font-weight: 600;
+	margin-bottom: 85px;
+}
+.section_wrong .wrong-info{
+	font-size: 24px;
+	font-weight: 100;
+	color: #807d7b;
+	margin-bottom: 25px;
+}
+.section_wrong .btn_brdr{
+	width: 260px;
+	margin: 8px 0 5px;
+}
+.search-input{
+	 position: relative;
+	 vertical-align: middle;
+	 display:inline-block;
+ }
+.search-input input[type="text"]{
+	border: 1px solid #282119;
+	margin: 0;
+	padding: 0 30px 0 10px;
+	line-height: 24px;
+	height: 24px;
+}
+.search-input input[type="button"]{
+	border: none;
+	margin: 0;
+	padding: 0;
+	height: 24px;
+	width: 24px;
+	cursor: pointer;
+	background: url("../img/global/icon-search.png") no-repeat 50% 50%;
+	position:  absolute;
+	top: 1px;
+	right: 1px;
+}
+.section_wrong .search-input{
+	margin: 8px 0 5px;
+}
+.section_wrong .search-input input[type="text"]{
+	width: 242px;
+}
+
+
+
+
+.header-nav li{position: relative;}
+.order-status{
+	display: none;
+	position: absolute;
+	left: 50%;
+	margin-left: -98px;
+	border: 1px solid #282119;
+	width: 175px;
+	padding: 10px;
+	z-index: 100;
+	background: #fff;
+	text-align: left;
+	margin-top: 20px;
+	font-size: 14px;
+}
+.order-status:before{
+	content: '';
+	position: absolute;
+	left: 50%;
+	margin-left: -14px;
+	top: -28px;
+	border: 14px solid transparent;
+	border-bottom-color: #282119;
+}
+.order-status_close{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	background: url("../img/global/close.png") no-repeat 0 0;
+}
+.order-status_label{
+	margin-bottom: 5px;
+}
+.order-status_num{
+	margin: 5px 0 0;
+}
+.order-status_num input{
+	border: 1px solid #8c8984;
+	font: inherit;
+	padding: 5px 10px;
+	width: 153px;
+	margin-bottom: 5px;
+}
+.order-status_btn{
+	margin: 0 0 10px;
+}
+.order-status_btn .btn{
+	width: 153px;
+	text-align: center;
+	margin-top: 5px;
+}
+.order-status_info{
+	font-size: 12px;
+	padding-left: 20px;
+	position: relative;
+}
+.order-status_info:before{
+	content: '';
+	width: 13px;
+	height: 13px;
+	display: block;
+	background: url("../img/global/info.png") no-repeat 0 0;
+	position: absolute;
+	top: 1px;
+	left: 0;
+}
+
+.order-status_mes{
+	font-size: 12px;
+	padding: 7px 12px;
+}
+.order-status_mes.status-error{
+	color: #fd0820;
+	background: #fffafb;
+}
+.order-status_mes.status-ok{
+	color: #008416;
+	padding: #fafffb;
+}
+.order-status_mes.status-waiting{
+	color: #ff6e08;
+	padding: #fafffb;
 }

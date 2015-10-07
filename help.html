@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 	<meta charset="utf-8" />
@@ -17,6 +16,8 @@
 	<script type="text/javascript" src="js/mCustomScrollbar.min.js"></script>
 	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="js/jquery.selectbox-0.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.slider.js"></script>
+	<script type="text/javascript" src="js/datepicker.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </head>
 
@@ -27,25 +28,7 @@
 	<header class="header">
 		<div class="inner">
 			<ul class="header-nav">
-				<li><a href="#" class="js-get-order-status">Что с моим заказом?</a>
-					<div class="order-status">
-						<div class="order-status_close"></div>
-						<div class="order-status_label">Введите номер заказа</div>
-						<div class="order-status_num"><input type="text"></div>
-						<div class="order-status_mes status-error">Ошибка, попробуйте позже</div>
-						<div class="order-status_mes status-error">Данного номера заказа не существует</div>
-						<div class="order-status_mes status-ok">Информация отправлена в клиентский отдел, ответ будет отправлен на e-mail ваш e-mail</div>
-						<div class="order-status_mes status-waiting">Информация по данному заказу в процессе обработки</div>
-						<div class="order-status_btn">
-							<a href="#" class="btn btn_brdr btn_solid">Узнать</a>
-						</div>
-						<div class="order-status_info">
-							Вы всегда можете проверить
-							информацию о вашем заказе
-							в своем личном кабинете.
-						</div>
-					</div>
-				</li>
+				<li><a href="#">Что с моим заказом?</a></li>
 				<li><a href="#">Помощь</a></li>
 				<li><a href="#">Регистрация</a></li>
 				<li><i class="icon icon_login"></i> <a href="#">Вход</a></li>
@@ -73,7 +56,7 @@
 				</span>
 			</div>
 			<div class="header-slog">
-				<a href="/"> <img alt="" src="http://wear.trade/images/logo.png"></a>
+				одежда родом из Польши
 			</div>
 		</div>
 	</header><!-- .header-->
@@ -1170,197 +1153,68 @@
 		</div>
 	</nav>
 
-	<section class="section section_bigposter">
+	<div class="breadcrumbs">
 		<div class="inner">
-			<div class="bigposter">
-				<div class="bigposter-img"><img src="img/posters/big_0001.jpg" alt=""></div>
-				<a class="bigposter-btn btn btn_brdr" href="#">Начать покупки</a>
-			</div>
+			<a href="#" class="breadcrumbs-item">Главная</a>
+			<a href="#" class="breadcrumbs-item">Помощь</a>
 		</div>
-	</section>
+	</div>
 
-	<section class="section section_menu">
-		<div class="inner">
-			<ul class="menu-list">
-				<li class="menu-item"><img src="img/global/icon-menu-cash.png" class="menu-img" alt=""><div class="menu-text">ПРЕДОПЛАТА<br>30 %</div></li>
-				<li class="menu-item"><img src="img/global/icon-menu-deliver.png" class="menu-img" alt=""><div class="menu-text">ДОСТАВКА<br>7 ДНЕЙ</div></li>
-				<li class="menu-item"><img src="img/global/icon-menu-spec.png" class="menu-img" alt=""><div class="menu-text">КВАЛИФИЦИРОВАННЫЙ<br>ПЕРСОНАЛ</div></li>
-				<li class="menu-item"><img src="img/global/icon-menu-fulltime.png" class="menu-img" alt=""><div class="menu-text">РАБОТАЕМ 7<br>ДНЕЙ В НЕДЕЛЮ</div></li>
-				<li class="menu-item"><img src="img/global/icon-menu-world.png" class="menu-img" alt=""><div class="menu-text">ДОСТАВКА В ЛЮБОЙ<br>РЕГИОН РОССИИ</div></li>
-				<li class="menu-item"><img src="img/global/icon-menu-location.png" class="menu-img" alt=""><div class="menu-text">БОЛЕЕ 30 ПОЛЬСКИХ<br>БРЕНДОВ</div></li>
-				<li class="menu-item"><img src="img/global/icon-menu-quality.png" class="menu-img" alt=""><div class="menu-text">ПРОДУКЦИЯ<br>ЕВРОПЕЙСКОГО КАЧЕСТВА</div></li>
-				<li class="menu-item"><img src="img/global/icon-menu-price.png" class="menu-img" alt=""><div class="menu-text">ГИБКИЕ УСЛОВИЯ<br>ОПЛАТЫ</div></li>
-			</ul>
-		</div>
-	</section>
+	<section class="section_catalog">
 
-	<section class="section section_posters">
-		<div class="inner">
-			<div class="posters-list clearfix">
-				<a href="#" class="posters-item">
-					<div class="posters-img"><img src="img/posters/0001.jpg" alt=""></div>
-					<div class="posters-text"><span>Рекордные скидки сезона!</span></div>
-				</a>
-				<a href="#" class="posters-item">
-					<div class="posters-img"><img src="img/posters/0002.jpg" alt=""></div>
-					<div class="posters-text"><span>Успейте!</span></div>
-				</a>
-				<a href="#" class="posters-item posters-item_sml">
-					<div class="posters-img"><img src="img/posters/0003.jpg" alt=""></div>
-					<div class="posters-text"><span>Только сегодня!</span></div>
-				</a>
-				<a href="#" class="posters-item posters-item_sml">
-					<div class="posters-img"><img src="img/posters/0004.jpg" alt=""></div>
-					<div class="posters-text"><span>Мужчинам, женщинам, детям!</span></div>
-				</a>
+		<div class="inner clearfix">
+			<div class="catalog-nav catalog-nav_info">
+				<div class="catalog-nav__title">Как заказать?</div>
+				<ul class="catalog-nav__list">
+					<li><a href="#">На сайте</a></li>
+					<li><a href="#" class="active">Верификация</a></li>
+					<li><a href="#">Как работать с сайтом?</a></li>
+				</ul>
+				<div class="catalog-nav__title big">Как оплатить?</div>
+				<ul class="catalog-nav__list">
+					<li><a href="#">На сайте</a></li>
+				</ul>
+				<div class="catalog-nav__title big">Как получить?</div>
+				<ul class="catalog-nav__list">
+					<li><a href="#">Доставка</a></li>
+					<li><a href="#">Почтовая доставка</a></li>
+				</ul>
+				<div class="catalog-nav__title big">Сервис и поддержка</div>
+				<ul class="catalog-nav__list">
+					<li><a href="#">Условия гарантии</a></li>
+					<li><a href="#">Возврат</a></li>
+				</ul>
 			</div>
-		</div>
-	</section>
+			<div class="catalog-content">
+				<div class="catalog-title">Верификация</div>
+				<div class="catalog-text">
+					<h2>Зачем мне подтверждать свой e-mail/телефон</h2>
 
-	<section>
-		<div class="inner">
-			<div class="section-title">
-				<div class="line"></div>
-				<div class="text">ПОПУЛЯРНЫЕ КАТЕГОРИИ</div>
-				<a href="" class="link">смотреть все</a>
-			</div>
-			<div class="carousel-wrap">
-				<div class="carousel carousel_category">
-					<div class="carousel-item bg-color-violet">
-						<div class="carousel-img"><img src="img/cat/001.jpg" alt=""></div>
-						<div class="carousel-txt">Мужские аксессуары</div>
-					</div>
-					<div class="carousel-item bg-color-orange">
-						<div class="carousel-img"><img src="img/cat/002.jpg" alt=""></div>
-						<div class="carousel-txt">Детская одежда</div>
-					</div>
-					<div class="carousel-item bg-color-green">
-						<div class="carousel-img"><img src="img/cat/003.jpg" alt=""></div>
-						<div class="carousel-txt">Женская обувь</div>
-					</div>
-					<div class="carousel-item bg-color-blue">
-						<div class="carousel-img"><img src="img/cat/001.jpg" alt=""></div>
-						<div class="carousel-txt">Мужские аксессуары</div>
-					</div>
-					<div class="carousel-item bg-color-brown">
-						<div class="carousel-img"><img src="img/cat/002.jpg" alt=""></div>
-						<div class="carousel-txt">Детская одежда</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+					<p><b>Ваша безопасность:</b> подтвердив адрес электронной почты или телефон, вы защищаете свой «Личный кабинет» на сайте от возможных
+					негативных действий третьих лиц.</p>
 
-	<section>
-		<div class="inner">
-			<div class="section-title">
-				<div class="line"></div>
-				<div class="text">ЛУЧШИЕ ТОВАРЫ</div>
-				<a href="" class="link">смотреть все</a>
-			</div>
-			<div class="carousel-wrap">
-				<div class="carousel carousel_goods">
-					<div class="prodcard-item">
-						<div class="prodcard-img"><img class="img-main" src="img/goods/mid/0001-01.jpg" alt=""></div>
-						<div class="prodcard-type">
-							<a href="img/goods/mid/0001-01.jpg" class="prodcard-type__link"><img src="img/goods/sml/0001-01.jpg" alt=""></a>
-							<a href="img/goods/mid/0001-02.jpg" class="prodcard-type__link"><img src="img/goods/sml/0001-02.jpg" alt=""></a>
-							<div class="prodcard-type__text">2 цвета</div>
-						</div>
-						<div class="prodcard-txt">
-							<div class="title">MAKADAMIA</div>
-							<div class="descr">Брюки летние R546</div>
-							<div class="price">4 290.00 руб.</div>
-							<a href="#" class="favorite btn"><i class="icon icon_heart"></i> <span>Избранное</span></a>
-							<a href="#" class="buy btn btn_brdr btn_solid"><i class="icon icon_cart"></i> <span>Купить</span></a>
-						</div>
-					</div>
+					<p><b>Информирование:</b> мы не сможем сообщить вам важную информацию о статусе выполнения заказа, если в «Личном кабинете» не будет указан
+					правильный адрес электронной почты или телефон.</p>
 
-					<div class="prodcard-item">
-						<div class="prodcard-img"><img class="img-main" src="img/goods/mid/0001-01.jpg" alt=""></div>
-						<div class="prodcard-type">
-							<a href="img/goods/mid/0001-01.jpg" class="prodcard-type__link"><img src="img/goods/sml/0001-01.jpg" alt=""></a>
-							<div class="prodcard-type__text">1 цвет</div>
-						</div>
-						<div class="prodcard-txt">
-							<div class="title">MAKADAMIA</div>
-							<div class="descr">Брюки летние R546</div>
-							<div class="price">4 290.00 руб.</div>
-							<a href="#" class="favorite btn"><i class="icon icon_heart"></i> <span>Избранное</span></a>
-							<a href="#" class="buy btn btn_brdr btn_solid"><i class="icon icon_cart"></i> <span>Купить</span></a>
-						</div>
-					</div>
+					<p><b>Доступ к новым категориям и бонусным акциям:</b> новые категории цифрового контента и многие бонусные акции доступны только
+					зарегистрированным пользователям, указавшим свой электронный адрес.</p>
 
-					<div class="prodcard-item">
-						<div class="prodcard-img"><img class="img-main" src="img/goods/mid/0001-01.jpg" alt=""></div>
-						<div class="prodcard-type">
-							<a href="img/goods/mid/0001-01.jpg" class="prodcard-type__link"><img src="img/goods/sml/0001-01.jpg" alt=""></a>
-							<a href="img/goods/mid/0001-02.jpg" class="prodcard-type__link"><img src="img/goods/sml/0001-02.jpg" alt=""></a>
-							<a href="img/goods/mid/0001-03.jpg" class="prodcard-type__link"><img src="img/goods/sml/0001-03.jpg" alt=""></a>
-							<div class="prodcard-type__text">3 цвета</div>
-						</div>
-						<div class="prodcard-txt">
-							<div class="title">MAKADAMIA</div>
-							<div class="descr">Брюки летние R546</div>
-							<div class="price">4 290.00 руб.</div>
-							<a href="#" class="favorite btn"><i class="icon icon_heart"></i> <span>Избранное</span></a>
-							<a href="#" class="buy btn btn_brdr btn_solid"><i class="icon icon_cart"></i> <span>Купить</span></a>
-						</div>
-					</div>
+					<h2>Почему я не могу сохранить свой старый логин?</h2>
 
-					<div class="prodcard-item">
-						<div class="prodcard-img"><img class="img-main" src="img/goods/mid/0001-01.jpg" alt=""></div>
-						<div class="prodcard-type">
-							<a href="img/goods/mid/0001-01.jpg" class="prodcard-type__link"><img src="img/goods/sml/0001-01.jpg" alt=""></a>
-							<div class="prodcard-type__text">1 цвет</div>
-						</div>
-						<div class="prodcard-txt">
-							<div class="title">MAKADAMIA</div>
-							<div class="descr">Брюки летние R546</div>
-							<div class="price">4 290.00 руб.</div>
-							<a href="#" class="favorite btn"><i class="icon icon_heart"></i> <span>Избранное</span></a>
-							<a href="#" class="buy btn btn_brdr btn_solid"><i class="icon icon_cart"></i> <span>Купить</span></a>
-						</div>
-					</div>
+					<p>В целях повышения безопасности хранения данных клиентов мы приводим все логины покупателей к единообразному виду номера телефона и e-mail.
+					Это позволит нам создать надёжную систему хранения ваших персональных данных, которая обезопасит вас от злонамеренных действий. В ближайшем
+					будущем эта система обеспечит вам доступ ко многим новым сервисам, которые сделают покупку максимально комфортной и качественной!</p>
 
-					<div class="prodcard-item">
-						<div class="prodcard-img"><img class="img-main" src="img/goods/mid/0001-01.jpg" alt=""></div>
-						<div class="prodcard-type">
-							<a href="img/goods/mid/0001-01.jpg" class="prodcard-type__link"><img src="img/goods/sml/0001-01.jpg" alt=""></a>
-							<a href="img/goods/mid/0001-02.jpg" class="prodcard-type__link"><img src="img/goods/sml/0001-02.jpg" alt=""></a>
-							<div class="prodcard-type__text">2 цвета</div>
-						</div>
-						<div class="prodcard-txt">
-							<div class="title">MAKADAMIA</div>
-							<div class="descr">Брюки летние R546</div>
-							<div class="price">4 290.00 руб.</div>
-							<a href="#" class="favorite btn"><i class="icon icon_heart"></i> <span>Избранное</span></a>
-							<a href="#" class="buy btn btn_brdr btn_solid"><i class="icon icon_cart"></i> <span>Купить</span></a>
-						</div>
-					</div>
+					<h2>Могу ли я настроить уведомления, чтобы получать только ту информацию, которая мне нужна?</h2>
+					<p>Вы всегда можете настроить свои оповещения. Зайдите в «Личный кабинет», затем во вкладку «Мои настройки» и далее в раздел «Уведомления».
+					Здесь вам будет доступна настройка информационных сообщений о состоянии заказа и сообщений с информацией о специальных предложениях от
+					компании. Вы можете выбрать именно те сообщения, которые вам нужны, чтобы делать качественные покупки.</p>
 
-				</div>
-			</div>
-		</div>
-	</section>
+					<h2>Мне нравился мой пароль, почему я должен его изменить?</h2>
 
-	<section>
-		<div class="inner">
-			<div class="section-title">
-				<div class="line"></div>
-				<div class="text">БРЕНДЫ</div>
-				<a href="" class="link">смотреть все</a>
-			</div>
-			<div class="carousel-wrap">
-				<div class="carousel carousel_brands">
-					<div class="carousel-item"><a href="#"><img src="img/brands/0001.jpg" alt=""></a></div>
-					<div class="carousel-item"><a href="#"><img src="img/brands/0002.jpg" alt=""></a></div>
-					<div class="carousel-item"><a href="#"><img src="img/brands/0003.jpg" alt=""></a></div>
-					<div class="carousel-item"><a href="#"><img src="img/brands/0004.jpg" alt=""></a></div>
-					<div class="carousel-item"><a href="#"><img src="img/brands/0001.jpg" alt=""></a></div>
-					<div class="carousel-item"><a href="#"><img src="img/brands/0002.jpg" alt=""></a></div>
-					<div class="carousel-item"><a href="#"><img src="img/brands/0003.jpg" alt=""></a></div>
-					<div class="carousel-item"><a href="#"><img src="img/brands/0004.jpg" alt=""></a></div>
+					<p>В рамках обеспечения безопасности аккаунтов наших клиентов мы считаем необходимым провести обновление паролей, чтобы они соответствовали
+					минимальному уровню безопасности. Данное изменение позволит избежать негативных ситуаций в будущем.</p>
+
 				</div>
 			</div>
 		</div>

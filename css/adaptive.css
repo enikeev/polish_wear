@@ -26,6 +26,11 @@
 		width: 30%;
 	}
 
+	.header-slog img {
+		height: 25px;
+		position: relative;
+		top: -40px;
+	}
 
 }
 
