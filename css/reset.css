@@ -94,3 +94,4 @@ hr{
 	display:table;
 	clear:both;
 }
+.nobr{white-space: nowrap;}

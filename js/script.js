@@ -816,6 +816,47 @@ $(function(){
 		$('.order-status').fadeOut();
 	});
 
+	$('.js-send-contact-form').click(function(e){
+		e.preventDefault();
+		var $form = $(this).closest('.contact-form_tabs-item');
+		var requir = $form.find('input.required');
+		$form.find('.error').removeClass('error');
+		if (requir.size()){
+			requir.each(function(){
+				if ( !$(this).val() ){
+					$(this).closest('.form_field').addClass('error');
+				}
+			})
+		}
+
+		if ( $form.find('.error').size() ){
+			return false;
+		} else {
+			alert('ok')
+		}
+
+	});
+
+
+	$('.js-tab-wrap').on('click', '[data-tab-link]', function(e){
+		e.preventDefault();
+		var $t = $(this);
+
+		if ( !$t.hasClass('active') ){
+			var ind = $t.data('tab-link'),
+				$wrap = $t.closest('.js-tab-wrap'),
+				$link = $wrap.find('[data-tab-link]'),
+				$item = $wrap.find('[data-tab-item]'),
+				$itemActive = $wrap.find('[data-tab-item=' + ind + ']');
+
+			$link.filter('.active').removeClass('active');
+			$item.filter('.active').removeClass('active');
+			$t.addClass('active');
+			$itemActive.addClass('active');
+		}
+	});
+
+
 });
 
 function regMatchCheckbox(){

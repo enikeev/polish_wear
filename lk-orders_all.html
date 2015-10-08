@@ -1172,7 +1172,7 @@
 			<div class="catalog-nav">
 				<div class="catalog-nav__title big">Мои заказы</div>
 				<ul class="catalog-nav__list">
-					<li><a href="#">Все</a></li>
+					<li><a href="#" class="active">Все</a></li>
 					<li><a href="#">Текущие</a></li>
 					<li><a href="#">Завершенные</a></li>
 					<li><a href="#">Невыкупленные</a></li>
@@ -1180,178 +1180,149 @@
 				<div class="catalog-nav__title big">Настройки</div>
 				<ul class="catalog-nav__list">
 					<li><a href="#">Личные данные</a></li>
-					<li><a href="#" class="active">Регистрация организации</a></li>
+					<li><a href="#">Регистрация организации</a></li>
 					<li><a href="#">Смена пароля</a></li>
 					<li><a href="#">Еще что-то</a></li>
 				</ul>
 
 			</div>
 			<div class="catalog-content">
+				<div class="catalog-filter">
+					<a href="#" class="btn btn_brdr btn_solid"><img src="img/global/arrow-back-w.png" alt="">&nbsp;&nbsp;Назад к списку</a>
+				</div>
+
 				<div class="catalog-table">
-					<div class="catalog-title">Новый адрес</div>
-					<table class="registration">
+					<table class="orders">
+						<thead>
+						<tr>
+							<th>Номер заказа</th>
+							<th>Дата</th>
+							<th>Кол-во</th>
+							<th>Стоимость</th>
+							<th>Статус</th>
+							<th>Детали</th>
+						</tr>
+						</thead>
 						<tbody>
 						<tr>
-							<td colspan="2" class="title">Укажите ФИО получателя груза</td>
-						</tr>
-						<tr>
-							<td class="name">Имя</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-2 js-val-inpt-text" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Фамилия</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-2 js-val-inpt-text" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Отчество</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-2 js-val-inpt-text" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2" class="title">Укажите контактный телефон получателя</td>
-						</tr>
-						<tr>
-							<td class="name">Телефон</td>
-							<td class="val">
-								<div class="field-item">
-									<div class="input-text"><i class="inpt-phone-prefix">+7</i><input type="text" class="size-1 required js-val-inpt-num inpt-phone">
-										<a href="#" class="btn btn_brdr btn_solid js-add-new-register-phone">Добавить еще телефон</a>
-									</div>
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-								<div class="footnote">Без тире, пробелов и скобок, например : +71112223456</div>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2" class="title">Укажите адрес доставки груза</td>
-						</tr>
-						<tr>
-							<td class="name">Страна</td>
-							<td class="val">
-								<div class="field-item">
-									<div class="field-item__input size-3 ">
-										<div class="input input_autocomplete">
-											<input class="required js-val-inpt-text" type="text">
-											<div class="input_autocomplete__result">
-												<!--Сюда подгрудать результаты автокомплита-->
-											</div>
-										</div>
-										<div class="message">Поле обязательно для заполнения</div>
-									</div>
-								</div>
-
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Регион</td>
-							<td class="val">
-								<div class="field-item">
-									<div class="field-item__input size-3 ">
-										<div class="input input_autocomplete">
-											<input class="required js-val-inpt-text" type="text">
-											<div class="input_autocomplete__result">
-												<!--Сюда подгрудать результаты автокомплита-->
-											</div>
-										</div>
-										<div class="message">Поле обязательно для заполнения</div>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Город/населенный<br>пункт</td>
-							<td class="val">
-								<div class="field-item">
-									<div class="field-item__input size-3 ">
-										<div class="input input_autocomplete">
-											<input class="required js-val-inpt-text" type="text">
-											<div class="input_autocomplete__result">
-												<!--Сюда подгрудать результаты автокомплита-->
-											</div>
-										</div>
-										<div class="message">Поле обязательно для заполнения</div>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Улица</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-3" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Индекс</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-1 js-val-inpt-num" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Дом</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-1 js-val-inpt-text" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Корпус</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="size-1 js-val-inpt-text" type="text">
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Литера</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="size-1 js-val-inpt-text" type="text">
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Квартира/офис</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-1 js-val-inpt-text" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-							</td>
-						</tr>
-
-						<tr>
-							<td class="name">&nbsp;</td>
-							<td class="val">
-								<br>
-								<a href="#" class="btn btn_brdr btn_solid js-submit-register">Сохранить</a>
-							</td>
+							<td><b>Заказ №23548</b></td>
+							<td>27.09.2015</td>
+							<td>20</td>
+							<td><b>1 650 руб</b> <span class="color-light">($ 76,92)</span></td>
+							<td>Завершен</td>
+							<td> </td>
 						</tr>
 						</tbody>
 					</table>
 				</div>
 
+				<div class="order-body">
+					<table class="order-table">
+						<thead>
+						<tr>
+							<th>Название</th>
+							<th>Фирма</th>
+							<th>Кол-во</th>
+							<th>Стоимость за ед.</th>
+							<th>Общая стоимость</th>
+							<th>Статус товара</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr data-max="3" class="order-item">
+							<td class="name">
+								<div class="name-img"><img alt="" src="img/goods/mid/0001-01.jpg"></div>
+								<table class="name-table">
+									<thead>
+									<tr>
+										<th colspan="2">Модные брюки свободного покроя</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>Артикул:</td>
+										<td>LHYF68GG-IIHB </td>
+									</tr>
+									<tr>
+										<td>Цвет:</td>
+										<td>голубой </td>
+									</tr>
+									<tr>
+										<td>Размер:</td>
+										<td>40</td>
+									</tr>
+									</tbody>
+								</table>
+							</td>
+							<td class="pict"><img alt="" src="img/brands/0001.jpg"></td>
+							<td class="increase">
+								1
+							</td>
+							<td class="price-uno">
+								<div class="price-rub"><span>1 650</span> руб</div>
+								<div class="price-usd">USD <span>24,78</span></div>
+							</td>
+							<td class="price-sum">
+								<div class="price-rub color"><span>1 650</span> руб</div>
+								<div class="price-usd">USD <span>24,78</span></div>
+							</td>
+							<td class="status">
+								<span class="status-error">Не отгружен</span>
+							</td>
+						</tr>
+						<tr data-max="3" class="order-item">
+							<td class="name">
+								<div class="name-img"><img alt="" src="img/goods/mid/0001-01.jpg"></div>
+								<table class="name-table">
+									<thead>
+									<tr>
+										<th colspan="2">Модные брюки свободного покроя</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>Артикул:</td>
+										<td>LHYF68GG-IIHB </td>
+									</tr>
+									<tr>
+										<td>Цвет:</td>
+										<td>голубой </td>
+									</tr>
+									<tr>
+										<td>Размер:</td>
+										<td>40</td>
+									</tr>
+									</tbody>
+								</table>
+							</td>
+							<td class="pict"><img alt="" src="img/brands/0001.jpg"></td>
+							<td class="increase">
+								1
+							</td>
+							<td class="price-uno">
+								<div class="price-rub"><span>1 650</span> руб</div>
+								<div class="price-usd">USD <span>24,78</span></div>
+							</td>
+							<td class="price-sum">
+								<div class="price-rub color"><span>3 300</span> руб</div>
+								<div class="price-usd">USD <span>49,56</span></div>
+							</td>
+							<td class="status">
+								<span class="status-ok">Отгружен</span>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="order-foot">
+					<div class="order-foot__right">
+						<div class="order-total">Всего на сумму</div>
+						<div class="order-totalval">
+							<span class="rub color"><i>4 950</i> руб.</span>
+							<span class="usd">($ <i>74,34</i>)</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

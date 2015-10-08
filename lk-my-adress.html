@@ -1172,7 +1172,7 @@
 			<div class="catalog-nav">
 				<div class="catalog-nav__title big">Мои заказы</div>
 				<ul class="catalog-nav__list">
-					<li><a href="#">Все</a></li>
+					<li><a href="#" class="active">Все</a></li>
 					<li><a href="#">Текущие</a></li>
 					<li><a href="#">Завершенные</a></li>
 					<li><a href="#">Невыкупленные</a></li>
@@ -1180,178 +1180,73 @@
 				<div class="catalog-nav__title big">Настройки</div>
 				<ul class="catalog-nav__list">
 					<li><a href="#">Личные данные</a></li>
-					<li><a href="#" class="active">Регистрация организации</a></li>
+					<li><a href="#">Регистрация организации</a></li>
 					<li><a href="#">Смена пароля</a></li>
 					<li><a href="#">Еще что-то</a></li>
 				</ul>
 
 			</div>
 			<div class="catalog-content">
+				<div class="catalog-filter">
+					<a href="#" class="btn btn_brdr btn_solid">+ Добавить новый адрес</a>
+				</div>
 				<div class="catalog-table">
-					<div class="catalog-title">Новый адрес</div>
-					<table class="registration">
+					<table class="adress">
+						<thead>
+						<tr>
+							<th>ФИО</th>
+							<th>Адрес</th>
+							<th>Телефон</th>
+							<th>Детали</th>
+						</tr>
+						</thead>
 						<tbody>
 						<tr>
-							<td colspan="2" class="title">Укажите ФИО получателя груза</td>
-						</tr>
-						<tr>
-							<td class="name">Имя</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-2 js-val-inpt-text" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
+							<td><b>Иванов Иван Иванович</b></td>
+							<td>
+								ул.Побежденных д.3, офис 205 Москва,
+								Российская Федерация, 101111
+							<td>
+								<span class="nobr">+7 (911) 111-12-12</span><br>
+								<span class="nobr">8 (812) 111-12-12</span>
+							</td>
+							<td>
+								<span class="nobr">
+									<a href="#" class="btn btn_brdr">Редактировать</a><a href="#" class="btn btn_brdr">Удалить</a>
+								</span>
 							</td>
 						</tr>
 						<tr>
-							<td class="name">Фамилия</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-2 js-val-inpt-text" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
+							<td><b>Иванов Иван Ивановичиванович</b></td>
+							<td>
+								ул.Побежденных д.3, офис 205 Санкт-Петербург,
+								Российская Федерация, 101111
+							<td>
+								<span class="nobr">+7 (911) 111-12-12</span>
+							</td>
+							<td>
+								<span class="nobr">
+									<a href="#" class="btn btn_brdr">Редактировать</a><a href="#" class="btn btn_brdr">Удалить</a>
+								</span>
 							</td>
 						</tr>
 						<tr>
-							<td class="name">Отчество</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-2 js-val-inpt-text" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
+							<td><b>Иванов Иван</b></td>
+							<td>
+								ул.Побежденных д.3, офис 205 Санкт-Петербург,
+								Российская Федерация, 101111
+							<td>
+								-
 							</td>
-						</tr>
-						<tr>
-							<td colspan="2" class="title">Укажите контактный телефон получателя</td>
-						</tr>
-						<tr>
-							<td class="name">Телефон</td>
-							<td class="val">
-								<div class="field-item">
-									<div class="input-text"><i class="inpt-phone-prefix">+7</i><input type="text" class="size-1 required js-val-inpt-num inpt-phone">
-										<a href="#" class="btn btn_brdr btn_solid js-add-new-register-phone">Добавить еще телефон</a>
-									</div>
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-								<div class="footnote">Без тире, пробелов и скобок, например : +71112223456</div>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2" class="title">Укажите адрес доставки груза</td>
-						</tr>
-						<tr>
-							<td class="name">Страна</td>
-							<td class="val">
-								<div class="field-item">
-									<div class="field-item__input size-3 ">
-										<div class="input input_autocomplete">
-											<input class="required js-val-inpt-text" type="text">
-											<div class="input_autocomplete__result">
-												<!--Сюда подгрудать результаты автокомплита-->
-											</div>
-										</div>
-										<div class="message">Поле обязательно для заполнения</div>
-									</div>
-								</div>
-
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Регион</td>
-							<td class="val">
-								<div class="field-item">
-									<div class="field-item__input size-3 ">
-										<div class="input input_autocomplete">
-											<input class="required js-val-inpt-text" type="text">
-											<div class="input_autocomplete__result">
-												<!--Сюда подгрудать результаты автокомплита-->
-											</div>
-										</div>
-										<div class="message">Поле обязательно для заполнения</div>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Город/населенный<br>пункт</td>
-							<td class="val">
-								<div class="field-item">
-									<div class="field-item__input size-3 ">
-										<div class="input input_autocomplete">
-											<input class="required js-val-inpt-text" type="text">
-											<div class="input_autocomplete__result">
-												<!--Сюда подгрудать результаты автокомплита-->
-											</div>
-										</div>
-										<div class="message">Поле обязательно для заполнения</div>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Улица</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-3" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Индекс</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-1 js-val-inpt-num" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Дом</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-1 js-val-inpt-text" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Корпус</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="size-1 js-val-inpt-text" type="text">
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Литера</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="size-1 js-val-inpt-text" type="text">
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">Квартира/офис</td>
-							<td class="val">
-								<div class="field-item">
-									<input class="required size-1 js-val-inpt-text" type="text">
-									<div class="message">Поле обязательно для заполнения</div>
-								</div>
-							</td>
-						</tr>
-
-						<tr>
-							<td class="name">&nbsp;</td>
-							<td class="val">
-								<br>
-								<a href="#" class="btn btn_brdr btn_solid js-submit-register">Сохранить</a>
+							<td>
+								<span class="nobr">
+									<a href="#" class="btn btn_brdr">Редактировать</a><a href="#" class="btn btn_brdr">Удалить</a>
+								</span>
 							</td>
 						</tr>
 						</tbody>
 					</table>
 				</div>
-
 			</div>
 		</div>
 	</section>
