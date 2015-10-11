@@ -369,7 +369,7 @@ function declOfNum(number, titles){
 
 
 $(function(){
-	$('.carousel_category').owlCarousel({
+	$('.carousel.carousel_category').owlCarousel({
 		loop:true,
 		margin:5,
 		nav:true,
@@ -390,7 +390,7 @@ $(function(){
 		}
 	});
 
-	$('.carousel_goods').owlCarousel({
+	$('.carousel.carousel_goods').owlCarousel({
 		loop:false,
 		margin:10,
 		nav:true,
@@ -409,7 +409,7 @@ $(function(){
 		}
 	});
 
-	$('.carousel_brands').owlCarousel({
+	$('.carousel.carousel_brands').owlCarousel({
 		loop:true,
 		margin:10,
 		nav:true,
