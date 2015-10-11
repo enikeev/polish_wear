@@ -2667,30 +2667,35 @@
 .section-auth .tabs-box-item{display: none;}
 .section-auth .tabs-box-item.active{display: block;}
 
-.section-auth .tabs-box-item .footnote{
+.section-auth .footnote{
 	color: #807d7b;
 	font-size: 14px;
 	margin: 5px 0 20px;
 }
-.section-auth .tabs-box-item .info{
+.section-auth .info{
 	color: #ff6e08;
 	margin: 10px 0;
 }
-.section-auth .tabs-box-item table{
+.section-auth table{
 	margin: 10px 0;
 }
-.section-auth .tabs-box-item table .name{
-	width: 120px;
+.section-auth table .name{
+	width: 135px;
 	text-align: right;
 	padding: 10px;
 	vertical-align: top;
 }
-.section-auth .tabs-box-item table .input{
+.section-auth table .link{
+	width: 135px;
+	padding: 10px;
+	vertical-align: top;
+}
+.section-auth table .input{
 	color: #807d7b;
 	font-size: 13px;
 	padding: 5px 0;
 }
-.section-auth .tabs-box-item table .input input{
+.section-auth table .input input{
 	width: 230px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -2698,9 +2703,12 @@
 	padding: 5px 10px;
 	border: 1px solid #9b9794;
 }
+.section-auth .error input{
+	border: 1px solid #fe7b88!important;
+}
 .section-auth .subscribe{text-align: left;}
 .section-auth .subscribe p{margin: 5px 0;}
-.section-auth .subscribe .error-message{
+.section-auth .error-message{
 	color: #fd0820;
 	padding: 10px;
 	background: #fffafb;
@@ -2709,7 +2717,11 @@
 .section-auth .input-field{color: #282119;}
 .section-auth img.captcha{border: 1px solid #8b8783;}
 .section-auth .input_captcha{width: 100px!important;}
-.section-auth .btn_brdr{padding: 5px 15px 3px;}
+.section-auth .btn_brdr{
+	padding: 5px 15px 3px;
+	min-width: 68px;
+	margin-right: -1px;
+}
 
 .section-auth .input-date{
 	white-space: nowrap;
