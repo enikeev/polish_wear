@@ -396,6 +396,7 @@ $(function(){
 		nav:true,
 		dots:false,
 		merge: true,
+		mouseDrag: false,
 		responsive:{
 			800:{
 				items:2
@@ -410,7 +411,7 @@ $(function(){
 	});
 
 	$('.carousel.carousel_brands').owlCarousel({
-		loop:true,
+		loop:false,
 		margin:10,
 		nav:true,
 		dots:false,
@@ -425,6 +426,41 @@ $(function(){
 			1300:{
 				items:7
 			}
+		}
+	});
+
+	$('.prodcard-type__previews').each(function(){
+		var $t = $(this);
+		var $slide = $t.find('.prodcard-type__link');
+
+		if ( $slide.size() > 4 ){
+			$t.addClass('flexslider')
+				.find('.prodcard-type__link')
+				.wrapAll('<ul class="slides"></ul>')
+				.end()
+				.find('.prodcard-type__link')
+				.wrap('<li></li>')
+				.end()
+				.flexslider({
+					prevText: "",
+					nextText: "",
+					animation: "slide",
+					controlNav: false,
+					animationLoop: false,
+					itemWidth: 45,
+					move: 1,
+					itemMargin: 0
+				});
+	/*
+			$t.owlCarousel({
+				loop:false,
+				margin:0,
+				nav:true,
+				dots:false,
+				merge: true,
+				items:4
+			});
+			*/
 		}
 	});
 
