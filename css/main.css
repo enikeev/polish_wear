@@ -749,7 +749,7 @@
 .wear-img__preview-item{
 	width: 50px;
 	height: 80px;
-	border: 1px solid #fff;
+	/*border: 1px solid #fff;*/
 	cursor: pointer;
 	margin: 5px;
 	display: block;
@@ -758,7 +758,7 @@
 .wear-img__preview-item:hover{
 	width: 50px;
 	height: 80px;
-	border-color: #d4d3d1;
+	/*border-color: #d4d3d1;*/
 }
 .wear-img__preview-item img{
 	height: 100%;

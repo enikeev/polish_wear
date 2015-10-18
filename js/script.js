@@ -533,19 +533,23 @@ $(function(){
 		advanced:{autoExpandHorizontalScroll:true}
 	});
 
-
+/*
 	$('.wear-img__preview-item').click(function(e){
 		e.preventDefault();
 
 		var $this = $(this);
 		var $big = $this.closest('.wear-img').find('.wear-img__big-item img');
+		var $bigLink = $this.closest('.wear-img').find('.wear-img__big-item');
 
 		if ( !$(this).hasClass('active') ){
 			$('.wear-img__preview-item').filter('.active').removeClass('active');
 			$this.addClass('active');
 			$big.attr('src', $this.attr('href') );
+			$bigLink.attr('href', $this.data('src') );
+			$big.attr('data-cloudzoom', $this.attr('data-cloudzoom') );
 		}
 	});
+*/
 	$('.wear-descr__color-item').click(function(e){
 		e.preventDefault();
 		var $this = $(this);
@@ -942,6 +946,54 @@ $(function(){
 	});
 
 
+
+	$('body').on('click', '.sbSelector', function(){
+		$(this).closest('.sbHolder').find('.sbOptions').mCustomScrollbar();
+	});
+
+
+	$(".wear-img__big img").on("click", function () {
+		var e = $(this).data("CloudZoom");
+		return e.closeZoom(),
+
+			$.fancybox(e.getGalleryList(), {
+				helpers: {title: {type: "inside", position: "top"}},
+				margin: 5,
+				padding: 0,
+				afterShow: function () {
+					var e = $(".fancybox-image");
+					if (e.CloudZoom({
+							zoomPosition: "inside",
+							zoomOffsetX: 0,
+							zoomFlyOut: !1,
+							easing: 1,
+							lensClass: "cloudzoom-zoom-inside"
+						}), /Android|webOS|iPhone|iPad|iPod|BlackBerry|Samsung|Opera mini|Opera mobi|Opera tablet/i.test(navigator.userAgent) && screen.width < 600) {
+
+						$(".fancybox-close").attr("class", "fancybox-item fancybox-close-mobile"),
+							$(".fancybox-prev").attr("class", "fancybox-item fancybox-prev2"),
+							$(".fancybox-next").attr("class", "fancybox-item fancybox-next2");
+						var a = ($("#fancybox-overlay").width(),
+							$(".fancybox-inner").width()), t = 0 - (a - 124);
+
+						$(".fancybox-next2, .fancybox-prev2").width(a),
+							$(".fancybox-next2").css("right", t),
+							$(".fancybox-prev2").css("left", t)
+					}
+				},
+				beforeLoad: function () {
+					var e = $(".fancybox-image");
+					e.data("CloudZoom") && e.data("CloudZoom").destroy()
+				},
+				beforeClose: function () {
+					var e = $(".fancybox-image");
+					e.data("CloudZoom") && e.data("CloudZoom").destroy()
+				}
+			}), !1
+	})
+
+
+
 });
 
 function regMatchCheckbox(){
@@ -957,5 +1009,6 @@ function regMatchCheckbox(){
 
 
 
+CloudZoom.quickStart();
 
 

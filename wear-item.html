@@ -6,6 +6,7 @@
 	<title>одежда родом из Польши</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
+	<link href="js/fancybox/jquery.fancybox.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 
 	<!--[if lt IE 9]>
@@ -16,7 +17,9 @@
 	<script type="text/javascript" src="js/mCustomScrollbar.min.js"></script>
 	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="js/jquery.selectbox-0.2.min.js"></script>
+	<script type="text/javascript" src="js/cloudzoom.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
 </head>
 
 <body>
@@ -1165,20 +1168,42 @@
 		<div class="inner clearfix">
 			<div class="wear-img">
 				<div class="wear-img__preview">
-					<a href="img/goods/big/0001-01.jpg" class="wear-img__preview-item active">
-						<img src="img/goods/sml/0001-01.jpg">
+					<a href="img/goods/xbig/0001-01.jpg" class="wear-img__preview-item">
+						<img class="cloudzoom-gallery cloudzoom-gallery-active" src="img/goods/sml/0001-01.jpg"
+							 alt =""
+							 data-cloudzoom='
+								 useZoom:"#zoom1",
+								 image:"img/goods/big/0001-01.jpg",
+								 zoomImage:"img/goods/xbig/0001-01.jpg"'>
 					</a>
-					<a href="img/goods/big/0001-02.jpg" class="wear-img__preview-item">
-						<img src="img/goods/sml/0001-02.jpg">
+					<a href="img/goods/xbig/0001-02.jpg" class="wear-img__preview-item">
+						<img class="cloudzoom-gallery" src="img/goods/sml/0001-02.jpg"
+							 alt =""
+							 data-cloudzoom='
+								 useZoom:"#zoom1",
+								 image:"img/goods/big/0001-02.jpg",
+								 zoomImage:"img/goods/xbig/0001-02.jpg"'>
 					</a>
-					<a href="img/goods/big/0001-03.jpg" class="wear-img__preview-item">
-						<img src="img/goods/sml/0001-03.jpg">
+					<a href="img/goods/xbig/0001-03.jpg" class="wear-img__preview-item">
+						<img class="cloudzoom-gallery" src="img/goods/sml/0001-03.jpg"
+							 alt =""
+							 data-cloudzoom='
+								 useZoom:"#zoom1",
+								 image:"img/goods/big/0001-03.jpg",
+								 zoomImage:"img/goods/xbig/0001-03.jpg"'>
 					</a>
 				</div>
 				<div class="wear-img__big">
-					<div class="wear-img__big-item">
-						<img src="img/goods/big/0001-01.jpg">
-					</div>
+					<img class="cloudzoom" alt="" id ="zoom1" src="img/goods/big/0001-01.jpg"
+						 data-cloudzoom='
+							 zoomImage:"img/goods/xbig/0001-01.jpg",
+							 zoomSizeMode: "image",
+							 tintColor:"#000",
+							 tintOpacity:0.25,
+							 captionPosition:"bottom",
+							 maxMagnification:4,
+							 autoInside:750
+							 '>
 				</div>
 			</div>
 			<div class="wear-descr">
