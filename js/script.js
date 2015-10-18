@@ -704,7 +704,56 @@ $(function(){
 
 //cart
 
+	$('.js-add-t-cart').click(function(e){
+		e.preventDefault();
+		var ajaxRequest = $.ajax({
+			type: "get",
+			dataType: "json",
+			data: $(this).data('id'),
+			url: 'http://fitradar.maestros.ru/polwear/test/addtocart.json'
+		});
+		ajaxRequest.done(function (res) {
+			if (res.status){
+				animToCart(e, function(){
+					var $subj = $('.header-account__cart');
+					var $subjNum = + $subj.find('.num').text();
+					$subj.find('.num').text($subjNum + 1);
+				});
+			}
+		});
+		ajaxRequest.fail(function(){
+			try { console.log('access error'); } catch(err){ console.log(err); }
+		});
 
+	});
+
+	function animToCart(e, callback){
+
+		var $targ = $(e.target);
+		var $subj = $('.header-account__cart');
+
+		var $mover = $('<div/>', {
+			class:  'cartmover'
+		}).css({
+			width:$targ.outerWidth(),
+			height:$targ.outerHeight(),
+			top:$targ.offset().top,
+			left:$targ.offset().left
+		}).appendTo('body')
+		.animate({
+			width:$subj.outerWidth(),
+			height:$subj.outerHeight(),
+			top:$subj.offset().top,
+			left:$subj.offset().left
+		}, 400, function(){
+			$mover.remove();
+			callback();
+		});
+
+		$('html,body').animate({scrollTop:0}, 400);
+
+
+	}
 
 
 
