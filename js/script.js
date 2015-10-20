@@ -374,6 +374,7 @@ $(function(){
 		margin:5,
 		nav:true,
 		dots:false,
+		mouseDrag: false,
 		responsive:{
 			0:{
 				items:1
@@ -433,7 +434,7 @@ $(function(){
 		var $t = $(this);
 		var $slide = $t.find('.prodcard-type__link');
 
-		if ( $slide.size() > 4 ){
+		if ( $slide.size() > 4 && !$t.hasClass('flexslider') ){
 			$t.addClass('flexslider')
 				.find('.prodcard-type__link')
 				.wrapAll('<ul class="slides"></ul>')
@@ -451,20 +452,32 @@ $(function(){
 					move: 1,
 					itemMargin: 0
 				});
-	/*
-			$t.owlCarousel({
-				loop:false,
-				margin:0,
-				nav:true,
-				dots:false,
-				merge: true,
-				items:4
-			});
-			*/
+
+		}
+
+		if ( $slide.size() > 4 && !$t.hasClass('flexslider') ){
+			$t.addClass('flexslider')
+				.find('.prodcard-type__link')
+				.wrapAll('<ul class="slides"></ul>')
+				.end()
+				.find('.prodcard-type__link')
+				.wrap('<li></li>')
+				.end()
+				.flexslider({
+					prevText: "",
+					nextText: "",
+					animation: "slide",
+					controlNav: false,
+					animationLoop: false,
+					itemWidth: 45,
+					move: 1,
+					itemMargin: 0
+				});
+
 		}
 	});
 
-	$('select').not('.input_autocomplete__select').selectbox();
+	$('select').not('.input_autocomplete__select').selectbox({effect: "fade"});
 
 
 
@@ -536,11 +549,9 @@ $(function(){
 /*
 	$('.wear-img__preview-item').click(function(e){
 		e.preventDefault();
-
 		var $this = $(this);
 		var $big = $this.closest('.wear-img').find('.wear-img__big-item img');
 		var $bigLink = $this.closest('.wear-img').find('.wear-img__big-item');
-
 		if ( !$(this).hasClass('active') ){
 			$('.wear-img__preview-item').filter('.active').removeClass('active');
 			$this.addClass('active');
@@ -1010,5 +1021,3 @@ function regMatchCheckbox(){
 
 
 CloudZoom.quickStart();
-
-
