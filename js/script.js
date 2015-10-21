@@ -334,11 +334,32 @@ function declOfNum(number, titles){
 
 			$('.increase-num input').on('click', function(){
 				$(this).select();
-			}).on("keyup input", function() {
+				var v = $(this).val() || 0;
+				$(this).data('num', v);
+			}).on("keyup input", function(e) {
 				if ( $(this).val().match(/[^0-9]/g) ) {
 					var _newVal = $(this).val().replace(/[^0-9]/g, '');
 					$(this).val(_newVal);
 				}
+
+				if (e.keyCode == 13){ $(this).blur(); }
+				if (e.keyCode == 27){
+					$(this).val($(this).data('num'));
+					$(this).blur();
+				}
+				app.order.check();
+			}).on("keydown", function(e) {
+				var v = +$(this).val() || 0, num;
+
+				if (e.keyCode ==  107 || e.keyCode ==  61 || e.keyCode ==  38 || e.keyCode ==  39){
+					num = (v+1) > 0 ? v+1 : 0;
+					$(this).val(num)
+				}
+				if (e.keyCode ==  109 || e.keyCode ==  173 || e.keyCode ==  37 || e.keyCode ==  40){
+					num = (v-1) > 0 ? v-1 : 0;
+					$(this).val(num)
+				}
+
 				app.order.check();
 			}).on("change", function() {
 				if ( !$(this).val() ) {
