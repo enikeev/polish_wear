@@ -770,9 +770,6 @@ $(function(){
 
 	}
 
-
-
-
 //lk
 
 	$('.js-settings-change').click(function(e){
@@ -840,6 +837,13 @@ $(function(){
 	$(document).on('change keyup input click', '.js-val-inpt-num', function() {
 		if ( $(this).val().match(/[^0-9]/g) ) {
 			var _newVal = $(this).val().replace(/[^0-9]/g, '');
+			$(this).val(_newVal);
+		}
+	});
+
+	$(document).on('change keyup input click', '.js-val-inpt-phone', function() {
+		if ( $(this).val().match(/[^0-9\-\+\(\)]/g) ) {
+			var _newVal = $(this).val().replace(/[^0-9\-\+\(\)]/g, '');
 			$(this).val(_newVal);
 		}
 	});
@@ -962,6 +966,11 @@ $(function(){
 		$(this).closest('.sbHolder').find('.sbOptions').mCustomScrollbar();
 	});
 
+	$('body').on('click', '.js-remove-popup', function(){
+		var $t = $(this);
+		$t.closest('.message-popup').fadeOut(400, function(){$t.remove();});
+	});
+
 
 	$(".wear-img__big img").on("click", function () {
 		var e = $(this).data("CloudZoom");
@@ -1001,9 +1010,9 @@ $(function(){
 					e.data("CloudZoom") && e.data("CloudZoom").destroy()
 				}
 			}), !1
-	})
+	});
 
-
+//	createPopup('asdasd')
 
 });
 
@@ -1019,5 +1028,25 @@ function regMatchCheckbox(){
 }
 
 
+function createPopup(text){
+
+	var $popup = $('<div class="message-popup" style="display: block;">'
+	+					'<div class="message-popup__overlay js-remove-popup"></div>'
+	+					'<div class="message-popup__body">'
+	+						'<div class="message-popup__close js-remove-popup"></div>'
+	+						'<div class="message-popup__body-inner">' + text + '</div>'
+	+					'</div>'
+	+				'</div>').appendTo('body');
+
+	var p = $popup.find('.message-popup__body');
+	var h = p.height();
+	var sT = $(window).scrollTop();
+	var wH = $(window).height();
+
+	p.css({
+		top: sT + ( (wH - h) / 2 ) + 'px'
+	}).fadeTo(300, 1);
+
+}
 
 CloudZoom.quickStart();

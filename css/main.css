@@ -2978,3 +2978,47 @@
 	-moz-box-shadow: inset 0 0 10px #000;
 	box-shadow: inset 0 0 10px #000;
 }
+
+
+
+
+/*popup*/
+
+
+.message-popup{}
+.message-popup__overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,0.5);
+	z-index: 100;
+}
+.message-popup__body{
+	width: 400px;
+	margin-left: -200px;
+	background: #fff;
+	-webkit-box-shadow: 0 0 7px #555;
+	-moz-box-shadow: 0 0 7px #555;
+	box-shadow: 0 0 7px #555;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 110;
+}
+.message-popup__close{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	background: url("../img/global/close.png") no-repeat 0 0;
+}
+.message-popup__body-inner{
+	min-height: 50px;
+	padding: 30px 15px 15px;
+}
+
+
