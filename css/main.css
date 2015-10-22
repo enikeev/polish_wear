@@ -814,7 +814,7 @@
 }
 
 .wear-descr__add{
-	margin-top: 50px;
+	margin-top: 25px;
 }
 
 .wear-descr__add .btn{
@@ -865,8 +865,44 @@
 }
 
 
+.wear-descr hr{
+	border-bottom-color: #a9a6a3;
+	margin: 15px 0;
+}
 
 
+.wear-descr__cart .cart-list{}
+.wear-descr__cart .cart-list tr{border: 1px solid #282119;}
+.wear-descr__cart .cart-list td{
+	color: #282119;
+	padding: 3px 7px;
+	vertical-align: middle;
+}
+.wear-descr__cart .cart-list td b{font-weight: 600;}
+.wear-descr__cart .cart-list .increase-box{
+	vertical-align: middle;
+}
+.wear-descr__cart .cart-list .cart-item_remove{
+	width: 15px;
+	height: 15px;
+	background: #282119 url("../img/global/clear_w.png") no-repeat 50% 50%;
+	cursor: pointer;
+}
+.wear-descr__cart .cart-list .cart-item_price{
+	font-size: 16px;
+	text-align: right;
+	white-space: nowrap;
+}
+.wear-descr__cart .cart-list .cart-item_price b{font-weight: 700;}
+
+.wear-descr__cart .cart-result{padding: 15px 0;}
+.wear-descr__cart .cart-result b{font-weight: 600}
+.wear-descr__cart .cart-result span{
+	font-size: 30px;
+	color: #ff6e08;
+	position: relative;
+	top: 3px;
+}
 
 
 
@@ -1487,9 +1523,10 @@
 }
 .catalog-list{}
 .catalog-list__head{
-	overflow: hidden;
+	/*overflow: hidden;*/
 	border-bottom: 1px solid #d4d3d1;
 	padding: 10px;
+	min-height: 30px;
 }
 .catalog-list__title{
 	font-weight: bold;
@@ -1501,7 +1538,12 @@
 	white-space: nowrap;
 }
 .catalog-list__paginator{display: inline-block}
-.catalog-list__control-btns{display: inline-block}
+.catalog-list__control-btns{
+	display: inline-block;
+	margin-left: 5px;
+	padding-left: 10px;
+	border-left: 1px solid #282119;
+}
 
 .catalog-list__control-btns .control-btn{
 	cursor: pointer;
@@ -1523,7 +1565,11 @@
 .catalog-list__control-btns .control-btn.active:after{
 	background-image: url('../img/global/drop-arrow_up.png');
 }
-
+.catalog-list__control-select{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+}
 
 .pagin-btn{
 	display: inline-block;
@@ -1768,7 +1814,7 @@
 	height: 17px;
 	line-height: 17px;
 	background: #282119;
-	width: 20px;
+	width: 30px;
 	font: inherit;
 	color: #fff;
 	border: 1px solid #282119;
