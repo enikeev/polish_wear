@@ -348,18 +348,24 @@ function declOfNum(number, titles){
 					$(this).blur();
 				}
 				app.order.check();
+			}).on("keyup", function(e) {
+				var $btn = $(this).closest('.increase-box').find('.increase-btn');
+				$btn.removeClass('pushed');
 			}).on("keydown", function(e) {
 				var v = +$(this).val() || 0, num;
+				var $up = $(this).closest('.increase-box').find('.increase-btn_up');
+				var $down = $(this).closest('.increase-box').find('.increase-btn_down');
 
 				if (e.keyCode ==  107 || e.keyCode ==  61 || e.keyCode ==  38 || e.keyCode ==  39){
 					num = (v+1) > 0 ? v+1 : 0;
-					$(this).val(num)
+					$(this).val(num);
+					$up.addClass('pushed');
 				}
 				if (e.keyCode ==  109 || e.keyCode ==  173 || e.keyCode ==  37 || e.keyCode ==  40){
 					num = (v-1) > 0 ? v-1 : 0;
-					$(this).val(num)
+					$(this).val(num);
+					$down.addClass('pushed');
 				}
-
 				app.order.check();
 			}).on("change", function() {
 				if ( !$(this).val() ) {

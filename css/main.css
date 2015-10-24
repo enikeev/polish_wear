@@ -1535,7 +1535,7 @@
 }
 .catalog-list__control{
 	float: right;
-	white-space: nowrap;
+	/*white-space: nowrap;*/
 }
 .catalog-list__paginator{display: inline-block}
 .catalog-list__control-btns{
@@ -1849,6 +1849,26 @@
 
 .increase-box .increase-btn:hover{
 	background: #282119;
+}
+
+@keyframes push-the-button{
+	0%{background: #282119;}
+	49%{background: #282119;}
+	50%{background: #625745;}
+	99%{background: #625745;}
+	100%{background: #282119;}
+}
+@-webkit-keyframes push-the-button{
+	0%{background: #282119;}
+	49%{background: #282119;}
+	50%{background: #625745;}
+	99%{background: #625745;}
+	100%{background: #282119;}
+}
+
+.increase-box .increase-btn.pushed{
+	animation: push-the-button 0.2s infinite linear;
+	-webkit-animation: push-the-button 0.2s infinite linear;
 }
 
 .order-table .few{display: none}

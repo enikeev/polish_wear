@@ -18,7 +18,6 @@
 		margin: 0 7px 12px;
 	}
 
-
 	.catalog-list .prodcard-item:nth-of-type(3n-1) {
 		margin: 10px 15px;
 	}
@@ -113,6 +112,17 @@
 
 	.section_catalog_lk .catalog-nav{float: none;}
 	.section_catalog_lk .catalog-content{margin-left: 0;}
+
+	.catalog-list__head{
+		min-height: 80px;
+		text-align: center;
+	}
+	.catalog-list__control-btns{
+		border-left: none;
+		margin-left: 0;
+		padding-left: 0;
+		padding-top: 5px;
+	}
 
 }
 
