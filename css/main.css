@@ -754,9 +754,20 @@
 	height: 80px;
 	/*border: 1px solid #fff;*/
 	cursor: pointer;
-	margin: 5px;
+	margin: 10px 5px;
 	display: block;
 }
+
+.wear-img__preview-wrap{
+	width: 60px;
+	max-height: 545px;
+	overflow: hidden;
+}
+.wear-img__preview-wrap .mCSB_scrollTools {
+	position: absolute;
+	left: -9999px;
+}
+.wear-img__preview-wrap .mCSB_container {margin: 0!important;}
 .wear-img__preview-item.active,
 .wear-img__preview-item:hover{
 	width: 50px;
@@ -764,8 +775,23 @@
 	/*border-color: #d4d3d1;*/
 }
 .wear-img__preview-item img{
-	height: 100%;
+	height: 100%!important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
+.wear-img__preview-up,
+.wear-img__preview-down{
+	width: 60px;
+	height: 20px;
+	cursor: pointer;
+}
+.wear-img__preview-up.disabled,
+.wear-img__preview-down.disabled{
+	opacity: 0.2;
+}
+.wear-img__preview-up{background: url("../img/global/drop-arrow_up.png") no-repeat 50% 50%;}
+.wear-img__preview-down{background: url("../img/global/drop-arrow_down.png") no-repeat 50% 50%;}
 .wear-img__big{
 	display: table-cell;
 	vertical-align: middle;
@@ -791,22 +817,26 @@
 .wear-descr__color{
 	border-top: 1px solid #a9a6a3;
 	border-bottom: 1px solid #a9a6a3;
-	padding: 17px 0;
+	padding: 5px 0;
 	overflow: hidden;
 }
 .wear-descr__color-title{
 	float: left;
 }
 .wear-descr__color-list{
-	margin-left: 45px;
+	/*margin-left: 45px;*/
 }
 .wear-descr__color-item{
 	display: inline-block;
-	width: 68px;
-	height: 68px;
-	border: 1px solid #d4d3d1;
+	width: 50px;
+	height: 80px;
+	border: 1px solid #fff;
 	margin: 3px;
 	cursor: pointer;
+}
+.wear-descr__color-item img{
+	width: 100%;
+	height: 100%;
 }
 .wear-descr__color-item:hover,
 .wear-descr__color-item.active{
@@ -829,6 +859,7 @@
 }
 .wear-descr__price{
 	font-size: 30px;
+	margin-bottom: 20px;
 }
 .wear-descr__text{
 	text-decoration: none;
@@ -863,6 +894,31 @@
 	opacity: 1;
 
 }
+
+.wear-descr__size-item{
+	display: inline-block;
+	border: 1px solid #282119;
+	padding: 5px 3px;
+	margin: 0 6px 9px 0;
+	text-align: center;
+	min-width:42px;
+	letter-spacing: -0.5px;
+	cursor: pointer;
+	text-decoration: none!important;
+}
+
+.wear-descr__size-item:hover,
+.wear-descr__size-item.active{
+	background: #282119;
+	color: #fff;
+}
+.wear-descr__size-item.disable{
+	background: none;
+	border-color: #c8c7c3;
+	color: #c8c7c3;
+	cursor: default;
+}
+
 
 
 .wear-descr hr{

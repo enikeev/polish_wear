@@ -457,6 +457,61 @@ $(function(){
 		}
 	});
 
+	$('.wear-img__preview').each(function(){
+		var $t = $(this);
+		var $slide = $t.find('.wear-img__preview-item');
+
+		if ( $slide.size() > 4 ){
+
+			$slide.wrapAll('<div class="wear-img__preview-wrap"></div>')
+				.end()
+				.find('.wear-img__preview-wrap')
+				.after('<div class="wear-img__preview-down"></div>')
+				.before('<div class="wear-img__preview-up disabled"></div>');
+
+			var $scroller = $t.find('.wear-img__preview-wrap');
+			var up = $t.find('.wear-img__preview-up');
+			var down = $t.find('.wear-img__preview-down');
+
+			$scroller.mCustomScrollbar({
+				mouseWheel: 'disable',
+				callbacks:{
+					whileScrolling:function(){
+						if ( this.mcs.topPct <= 0 ) {
+							up.addClass('disabled');
+						} else if ( this.mcs.topPct >= 100 ){
+							down.addClass('disabled');
+						} else {
+							up.add(down).removeClass('disabled');
+						}
+					}
+				},
+				scrollButtons:{enable:true},
+				advanced:{autoExpandHorizontalScroll:true},
+				scrollbarPosition:"outside"
+			});
+
+			up.on('click', function(){
+				$scroller.mCustomScrollbar('scrollTo','+=91',{scrollInertia:400});
+			});
+			down.on('click', function(){
+				$scroller.mCustomScrollbar('scrollTo','-=91',{scrollInertia:400});
+			});
+
+		}
+	});
+/*
+	$('body').on('click', '.wear-img__preview-up', function(){
+		var $scroller = $(this).closest('.wear-img__preview').find('.wear-img__preview-wrap');
+		$scroller.mCustomScrollbar('scrollTo','+=100');
+		console.log('1')
+	}).on('click', '.wear-img__preview-down', function(){
+		var $scroller = $(this).closest('.wear-img__preview').find('.wear-img__preview-wrap');
+		$scroller.mCustomScrollbar("scrollTo", '-=60');
+		console.log('2')
+	});
+*/
+
 	$('.prodcard-type__previews').each(function(){
 		var $t = $(this);
 		var $slide = $t.find('.prodcard-type__link');
@@ -474,6 +529,7 @@ $(function(){
 					nextText: "",
 					animation: "slide",
 					controlNav: false,
+					slideshow: false,
 					animationLoop: false,
 					itemWidth: 45,
 					move: 1,
@@ -482,26 +538,6 @@ $(function(){
 
 		}
 
-		if ( $slide.size() > 4 && !$t.hasClass('flexslider') ){
-			$t.addClass('flexslider')
-				.find('.prodcard-type__link')
-				.wrapAll('<ul class="slides"></ul>')
-				.end()
-				.find('.prodcard-type__link')
-				.wrap('<li></li>')
-				.end()
-				.flexslider({
-					prevText: "",
-					nextText: "",
-					animation: "slide",
-					controlNav: false,
-					animationLoop: false,
-					itemWidth: 45,
-					move: 1,
-					itemMargin: 0
-				});
-
-		}
 	});
 
 	$('select').not('.input_autocomplete__select').selectbox({effect: "fade"});
