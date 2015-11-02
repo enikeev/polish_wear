@@ -329,7 +329,7 @@
 	line-height:1.4;
 	margin-top:7px;
 	margin-left:-15px;
-	border-right:none;
+	/*border-right:none;*/
 	display:none;
 }
 .subnav-menu{
@@ -374,7 +374,7 @@
 }
 .cat-part{
 	padding:15px;
-	border-right:1px solid #d4d3d1;
+	/*border-right:1px solid #d4d3d1;*/
 }
 .subnav-cat .cat-title{
 	font-size:16px;
