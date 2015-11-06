@@ -438,6 +438,29 @@ $(function(){
 		}
 	});
 
+	$('.js-add-new-item').click(function(){
+		var data = '<div class="owl-item"><div class="prodcard-item">' +
+			'		<div class="prodcard-img"><img class="img-main" src="img/goods/mid/0001-03.jpg" alt=""></div>' +
+			'			<div class="prodcard-type">' +
+			'				<div class="prodcard-type__previews">' +
+			'					<a href="img/goods/mid/0001-01.jpg" class="prodcard-type__link"><img src="img/goods/sml/0001-01.jpg" alt=""></a>' +
+			'						<a href="img/goods/mid/0001-02.jpg" class="prodcard-type__link"><img src="img/goods/sml/0001-02.jpg" alt=""></a>' +
+			'						</div>' +
+			'						<div class="prodcard-type__text">2 цвета</div>' +
+			'					</div>' +
+			'					<div class="prodcard-txt">' +
+			'						<div class="title">MAKADAMIA</div>' +
+			'						<div class="descr">Брюки летние R546</div>' +
+			'						<div class="price">4 290.00 руб.</div>' +
+			'						<a href="#" class="favorite btn"><i class="icon icon_heart"></i> <span>Избранное</span></a>' +
+			'						<a href="#" class="buy btn btn_brdr btn_solid"><i class="icon icon_cart"></i> <span>Купить</span></a>' +
+			'					</div>' +
+			'				</div></div>';
+
+		$('.carousel.carousel_goods').trigger('add.owl.carousel', [$(data)]).trigger('refresh.owl.carousel');
+
+	});
+
 	$('.carousel.carousel_brands').owlCarousel({
 		loop:false,
 		margin:10,

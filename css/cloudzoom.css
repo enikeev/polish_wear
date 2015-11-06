@@ -12,6 +12,8 @@
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 	height: 200px;
 	width: 500px;
+
+	background: #fff url("../img/global/loading_spinner.gif") no-repeat 50% 50%;
 }
 .cloudzoom-zoom-inside {
 	border: medium none;
