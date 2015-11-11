@@ -179,6 +179,12 @@ function declOfNum(number, titles){
 						$('.section_delivery-payment').fadeIn(300);
 						$('html,body').animate({scrollTop:$('.section_delivery-payment').offset().top}, 300);
 					}
+				},
+				toOrdered: function(){
+
+					$('.section_delivery-ordered').fadeIn(300);
+					$('html,body').animate({scrollTop:$('.section_delivery-ordered').offset().top}, 300);
+
 				}
 			},
 
@@ -202,7 +208,7 @@ function declOfNum(number, titles){
 					app.delivery.nextScreen.toPayment();
 				}).on('click', '.js-order-pay', function(e){
 					e.preventDefault();
-
+					app.delivery.nextScreen.toOrdered();
 				}).on('change', '.section_delivery-payment input[name=delivery-payment]', function(e){
 					var $t = $(this);
 					$('.section_delivery-payment input[name=delivery-payment]').closest('.field-group').removeClass('active');
@@ -552,9 +558,9 @@ $(function(){
 					nextText: "",
 					animation: "slide",
 					controlNav: false,
-					slideshow: false,
 					animationLoop: false,
 					itemWidth: 45,
+					slideshow: false,
 					move: 1,
 					itemMargin: 0
 				});

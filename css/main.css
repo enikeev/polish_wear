@@ -2487,6 +2487,46 @@
 .section_delivery-payment .order-result .order-result__check{margin: 0;}
 
 
+.section_delivery-ordered .text{color: #757575;}
+.section_delivery-ordered .text p{margin: 10px 0;}
+.section_delivery-ordered .text b{color: #282119;}
+.section_delivery-ordered .text a{color: #ff6e08; text-decoration: underline;}
+.section_delivery-ordered .subtitle{color: #57524c;font-size: 18px;margin-top: 35px;}
+.section_delivery-ordered table.docs{
+	margin: 15px 0;
+}
+.section_delivery-ordered table.docs th,
+.section_delivery-ordered table.docs td{
+	vertical-align: middle;
+	text-align: center;
+	padding: 5px 25px;
+}
+.section_delivery-ordered table.docs th div{
+	vertical-align: middle;
+	font-size: 14px;
+	font-weight: normal;
+	color: #7a7a7a;
+	border-bottom: 1px solid #d4d3d1;
+	padding-bottom: 3px;
+}
+.section_delivery-ordered table.docs .doc-link{
+	width: 77px;
+	height: 109px;
+	background: url("../img/delivery/doc.png");
+	text-decoration: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+.section_delivery-ordered table.docs .doc-link:before{
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.section_delivery-ordered table.docs .doc-link span{
+	display: inline-block;
+	vertical-align: middle;
+}
 
 
 .section_catalog b{
@@ -2801,6 +2841,7 @@
 
 .section_delivery-method,
 .section_delivery-place,
+.section_delivery-ordered,
 .section_delivery-payment{
 	display: none
 }
